@@ -1,4 +1,7 @@
-  <header>
+<?php 
+  session_start();
+?>
+<header>
     <div class="container-fluid">
       <div class="container-fluid top-bar">
         <div class="welocome">Welcome to Mobile Planet</div>
@@ -14,7 +17,7 @@
               <li><i class='bx bxs-cart'></i><span>Cart</span></li>
             </a>
             <a href="signin.php">
-              <li><i class='bx bxs-user'></i><span>Sign in</span></li>
+              <li><i class='bx bxs-user'></i><span><?php if(isset($_SESSION['log_name'])){echo $_SESSION['log_name'].'&nbsp<a href="includes/logout.inc.php" name = "logout">Log out</a>';}else{echo "Sign in";}?></span></li>
             </a>
 
           </ul>

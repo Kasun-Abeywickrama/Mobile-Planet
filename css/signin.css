@@ -1,0 +1,31 @@
+.content-wrapper {
+	padding-top: 130px;
+	/*background-color: red;*/
+}
+
+.content{
+    width: calc(100% - 20px);
+    max-width: 400px;
+    padding: 40px 10px 40px 10px; 
+}
+
+@media screen and (max-width : 992px) {
+	.content-wrapper {
+		padding-top: 170px;
+	}
+}
+
+.form-wrapper {
+	display: flex;
+	
+}
+
+.register-form {
+	display: none;
+}
+
+.signin-btn {
+	color: #2A89FB;
+	text-decoration: underline;
+	
+}
