@@ -10,6 +10,7 @@
   <!-- Bootstrap and Header Footer CSS -->
   <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
   <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
+
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- CSS for home site  -->
@@ -19,7 +20,7 @@
 
 <body>
 
- <?php include_once 'header.php'; ?>
+ <?php include_once 'header.php';?>
 
   <div class="container-fluid content-wrapper">
 
@@ -143,8 +144,13 @@
     </div>
   </div>
 
-  <?php include_once 'footer.php'; ?>
+  <?php include_once 'footer.php';?>
 
+  <?php 
+    if(isset($_GET['logout'])){
+      echo '<script> alert("Successfully loged out ") </script>';
+    }
+  ?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
