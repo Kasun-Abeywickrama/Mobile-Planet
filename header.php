@@ -76,7 +76,7 @@
                 </li>
 
                 <li class="nav-item"> <a class="nav-link" href="#">About us&nbsp;</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#">Contact us&nbsp;</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="pages/contact-us.php">Contact us&nbsp;</a> </li>
 
 
                 <li class="nav-item"> <a class="nav-link disabled" href="#">Offers</a> </li>
