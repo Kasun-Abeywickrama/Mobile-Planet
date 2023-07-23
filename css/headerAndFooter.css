@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+.container-fluid {
+	padding: 0;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+
+footer {
+	background-color: #1E2A7D;
+	color: white;
+}
+
+/* ---------------- top bar css  -------------------*/
+
+.top-bar {
+	background-color: #1E2A7D;
+	display: flex;
+	border-bottom: 0.5px solid #7E7E7E;
+}
+
+.top-bar>div {
+	width: fit-content;
+	/*background-color: red;*/
+}
+
+
+.top-bar-links-wrapper {
+	position: absolute;
+	right: 0;
+}
+
+.top-bar-links-wrapper span {
+	color: white;
+}
+
+.top-bar-links-wrapper>ul {
+	margin: 0;
+	display: flex;
+	list-style: none;
+
+}
+
+.top-bar-links-wrapper>ul>a>li {
+	padding-right: 20px;
+	color: #ffffff;
+}
+
+.top-bar-links-wrapper>ul>a>li:hover {
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.top-bar-links-wrapper>ul>a {
+	text-decoration: none;
+	color: 737EE4;
+}
+
+.welocome {
+	color: white;
+	padding-left: 10px;
+}
+
+
+@media screen and (min-width: 576px) {
+	.top-bar-links-wrapper i {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.top-bar {
+		height: 30px;
+		align-items: center;
+	}
+
+	.top-bar-links-wrapper span {
+		/*background-color: red;*/
+		display: none;
+	}
+
+	.top-bar-links-wrapper>ul>a>li {
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.welocome {
+		display: none;
+	}
+}
+
+
+/* ---------------- search bar css -------------------*/
+
+.search-bar {
+	border-bottom: 1px solid #C5C5C5;
+	display: flex;
+	align-items: center;
+	background-color: #1E2A7D;
+}
+
+.logo {
+	width: 320px;
+	height: 60px;
+	background-image: url("../assets/logo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-left: 10px;
+}
+
+
+.search-input-wrapper {
+	width: 90%;
+	max-width: 400px;
+	/*background-color: red;*/
+	height: fit-content;
+
+}
+
+.search-input-wrapper input {
+	/*background-color: aqua;*/
+	width: calc(100% - 30px);
+}
+
+.search-btn {
+	width: 30px;
+	height: 30px;
+}
+
+
+
+
+@media screen and (max-width: 1050px) {
+	.search-bar {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+
+
+@media screen and (min-width: 1050px) {
+
+	.search-input-wrapper {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+
+
+/* ---------------- nav bar css -------------------*/
+
+.navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.nav-bar-wrapper {
+	background-color: #F9F6FB;
+}
+
+@media screen and (min-width: 992px) {
+	.navbar-brand {
+		display: none;
+	}
+}
+
