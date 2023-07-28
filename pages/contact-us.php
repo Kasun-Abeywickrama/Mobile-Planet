@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+    function x()
+    {
+        if(document.log.yn.value=="")
+        {
+            alert("Name is missing");
+        }
+        if(document.log.yn.value.length>70)
+        {
+            alert("Name should be less than 70 characters")
+        }
+        if(document.log.em.value=="")
+        {
+            alert("Email is missing");
+        }
+        if(document.log.in.value=="")
+        {
+            alert("Inquiry is empty");
+        }
+
+
+    }
+    </script>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,20 +68,20 @@
         <div class="container-fluid contact-form-wrapper">
             <div class="container contact-form">
                 <h2 class="text-center">Contact Form</h2>
-                <form>
+                <form name="log">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Your Name&nbsp;</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
+                        <label for="exampleInputName">Your Name&nbsp;</label>
+                        <input type="text" class="form-control" id="exampleInputName" name="yn">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">E-mail&nbsp;</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputEmail">E-mail&nbsp;</label>
+                        <input type="email" class="form-control" id="exampleInputEmail" name="em">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Inquiry&nbsp;</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputInquiry">Inquiry&nbsp;</label>
+                        <input type="text" class="form-control" id="exampleInputInquiry" name="in">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" onclick="x();">Submit</button>
                 </form>
             </div>
         </div>
