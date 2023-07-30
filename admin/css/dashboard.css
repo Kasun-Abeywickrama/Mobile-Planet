@@ -1,0 +1,122 @@
+.page-content .tile {
+    background-color: white;
+    width: 100%;
+    height: 115px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    margin: 0;
+}
+.tile-wrapper .row {
+    padding-top: 20px;;
+}
+.page-content .row .tile .amount{
+    height: 25px;
+    width: calc(100% - 30px);
+    margin-top: 15px;
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.page-content .row .tile .title{
+    height: 20px;
+    width: calc(100% - 30px);
+    line-height: 20px;
+    font-size: 15px;
+}
+ 
+.page-content .row .tile .presentage-bar{
+    width: calc(100% - 30px);
+    height: 35px;
+    margin-top: 10px;
+}
+
+.page-content .row .tile .presentage-number{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.page-content .row .tile .presentage-bar .progress{
+    height: 10px;
+}
+    
+.recent-sales-wrapper{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.row .title{
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 10px;
+
+}
+
+.top-seling-wrapper{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.recent-sales-wrapper .body{
+    padding-left: 10px;
+    padding-top: 8px;
+    width: calc(100% - 5px);
+    /* background-color: red;  */
+    max-height: 400px;
+    overflow: hidden;
+    /* overflow-y: scroll; */
+    overflow: scroll;
+}
+
+.recent-sales-wrapper .body::-webkit-scrollbar{
+    width: 8px;
+}
+.recent-sales-wrapper .body::-webkit-scrollbar-thumb{
+    width: 8px;
+    background: rgb(117, 117, 117);
+    border-radius: 6px;
+}
+
+
+.recent-sales-wrapper .body table{
+    width: 100%;
+}
+
+.recent-sales-btn{
+    position: relative;
+    float: right;
+    height: 25px;
+    line-height: 22px;
+    width: 60px;
+    padding: 0;
+    margin: 0;
+    background-color: #0A2556;
+    border: 1px solid #0A2556;
+    margin: 10px 35px 0 0;
+}
+.recent-sales-wrapper tr td{
+    border: 1px solid rgb(241, 241, 241); 
+    border-collapse : collapse;
+  }
+
+  .top-seling-wrapper{
+    padding: 10px;
+}
+
+  .top-seling-wrapper .body{
+    display: flex;
+    justify-content: center;
+  }
+
+  .top-seling-wrapper .body table{
+    width: calc(100% - 20px)
+  }
