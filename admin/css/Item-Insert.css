@@ -1,0 +1,47 @@
+@charset "utf-8";
+.container .jumbotron label {
+}
+.container .jumbotron .l1 {
+    font-weight: bold;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: x-large;
+    text-align: left;
+}
+
+.l1 {
+}
+form .form-group #exampleInputEmail1 {
+    width: 500px;
+}
+form .form-group.form-control {
+    width: 500\px;
+}
+form .form-group #exampleInputPassword1 {
+    width: 500px;
+}
+form .form-group #exampleInputPassword1 {
+}
+.jumbotron form .form-group {
+    width: 500px;
+}
+.jumbotron center .l1 {
+    width: 500px;
+}
+.container-fluid .container .jumbotron {
+    width: 560px;
+}
+form .form-group #submit123 {
+    background-color: #27E30F;
+    background-image: -webkit-linear-gradient(270deg,rgba(41,200,91,1.00) 13.68%,rgba(66,255,0,1.00) 88.81%);
+    background-image: -moz-linear-gradient(270deg,rgba(41,200,91,1.00) 13.68%,rgba(66,255,0,1.00) 88.81%);
+    background-image: -o-linear-gradient(270deg,rgba(41,200,91,1.00) 13.68%,rgba(66,255,0,1.00) 88.81%);
+    background-image: linear-gradient(180deg,rgba(41,200,91,1.00) 13.68%,rgba(66,255,0,1.00) 88.81%);
+    font-weight: bolder;
+}
+form .form-group #reset123 {
+    background-image: -webkit-linear-gradient(270deg,rgba(198,158,159,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(198,158,159,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(198,158,159,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(198,158,159,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    font-weight: bolder;
+}
