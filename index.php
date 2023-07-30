@@ -117,7 +117,7 @@
 
   <?php 
     if(isset($_GET['logout'])){
-      echo '<script> alert("Successfully loged out") </script>';
+      echo '<script> alert("Successfully loged out ") </script>';
     }
   ?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

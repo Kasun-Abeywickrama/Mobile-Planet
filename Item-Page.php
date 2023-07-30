@@ -1,3 +1,4 @@
+
 <?php
 	if(!isset($_POST['submit'])){
         header("Location: index.php?error=error");
@@ -43,6 +44,7 @@
 	        <div class="jumbotron">
 	          <h1 class="display-4"><?php echo $_POST['item-name']; ?></h1>
 	          <h1 class="display-41"><?php echo $_POST['item-price']; ?></h1>
+
 	          
               <div id="accordion1" role="tablist">
                 <div class="card">

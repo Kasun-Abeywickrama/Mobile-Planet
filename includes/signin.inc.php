@@ -41,10 +41,6 @@
         }
         
     }else{
-         // Close the database connection
-         $conn->close();
         header('Location:../index.php');
     }
-        // Close the database connection
-        $conn->close();
 ?>
