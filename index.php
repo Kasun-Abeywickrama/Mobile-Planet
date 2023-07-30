@@ -52,95 +52,64 @@
       </div>
       <div class="container cat-card-wrapper">
         <div class="row">
-          <div class="col-md-3">
-            <div class="card col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">I phone 14 pro&nbsp;</h5>
-                <a href="#" class="btn btn-primary">More Info&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Galaxy S20 Ultra&nbsp;</h5>
-                <a href="#" class="btn btn-primary">More info&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Redmi&nbsp;</h5>
-                <a href="#" class="btn btn-primary">More info&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Poco&nbsp;</h5>
-                <a href="#" class="btn btn-primary">More info&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
+            <?php
+              include_once 'includes/dbconn.inc.php';
+              $query = "select * from topsales";
+              $result = mysqli_query($conn,$query);
+              // $itemName = "i Phone x";
+              // $price = 25000.00;
+              while($record = mysqli_fetch_assoc($result)){
+                // echo '<h1>'.$record['name'].'</h1>';
+                echo '
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card">
+                    <img src="assets\mobile-phones\\'.$record['name'].'.png" alt="asc">
+                    <div class="card-body">
+                      <form action="Item-Page.php" name="card-form" method="post">
+                      <h5 class="card-title" >'.$record['name'].'</h5><input type="hidden" name="item-name" value="'.$record['name'].'"><input type="hidden" name="item-price" value="'.$record['price'].'">
+                      <div class="card-bottom"><strong>'.$record['price'].'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+                ';
+              }
+            ?>
         </div>
       </div>
     </div>
     <div class="container-fluid cat-wrapper">
       <div class="container title">
-        <h3>Top Sales&nbsp;</h3>
+        <h3>Categories</h3>
       </div>
+
       <div class="container cat-card-wrapper">
         <div class="row">
-          <div class="col-md-3">
-            <div class="card col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Mobile Phones&nbsp;</h5>
-                <a href="#" class="btn btn-primary">Add to cart&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Tablets&nbsp;</h5>
-                <a href="#" class="btn btn-primary">Add to cart&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Smart watches&nbsp;</h5>
-                <a href="#" class="btn btn-primary">Add to cart&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
-          <div class="col-md-3">
-            <div class="card col-lg-12 col-md-12"> <img class="card-img-top" src="assets/sampleImages/card-img.png"
-                alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Accesories&nbsp;</h5>
-                <a href="#" class="btn btn-primary">Add to cart&nbsp;</a>
-              </div>
-            </div>
-            &nbsp;
-          </div>
+            <?php
+              include_once 'includes/dbconn.inc.php';
+              $query = "select * from categories";
+              $result = mysqli_query($conn,$query);
+              while($record = mysqli_fetch_assoc($result)){
+                echo '
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card">
+                    <img src="assets\mobile-phones\\'.$record['name'].'.png" alt="asc">
+                    <div class="card-body">
+                      <form action="category.php" name="card-form" method="post">
+                      <h5 class="card-title" >'.$record['name'].'</h5><input type="hidden" name="cat-name" value="'.$record['name'].'">
+                      <div class="card-bottom"><button type="submit" class="btn btn-primary" name="submit">See more</button></div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+                ';
+              }
+              $conn->close();
+            ?>
         </div>
       </div>
+
+
     </div>
   </div>
 
