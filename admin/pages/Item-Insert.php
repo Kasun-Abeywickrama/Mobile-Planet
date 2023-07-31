@@ -8,15 +8,14 @@
     <!-- Bootstrap -->
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/Item-Insert.css" rel="stylesheet" type="text/css">
-	<link href="../css/headerAndSidebar.css" rel="stylesheet" type="text/css">
+	<link href="../../css/HeaderAndFooter.css" rel="stylesheet" type="text/css">
 	<script src="../js/Item-Insert-JS/Item-Insert-Validate.js"></script>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
 	<?php
-		include_once 'header.php'
+		include_once '../../header.php'
 	?>
-    
 
 
   	<div class="container-fluid">
@@ -29,11 +28,12 @@
 			    	<input type="text" class="form-control" name="itemName" placeholder="Enter the product name">
 				</div>
 			  	<div align="left" class="form-group">
-			    	<label for="inputItemType">Category&nbsp;</label>
+			    	<label for="inputItemType">TYPE&nbsp;</label>
 			    	<select name="itemType" class="form-control" >
 						<option value="0">Select the product Category</option>
 						<option value="1">Mobile Phone</option>
 						<option value="2">Tablet</option>
+
 				  	</select>
 		    	</div>
 			  
@@ -112,6 +112,9 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/Item-Insert-JS/popper.min.js"></script> 
   <script src="../js/Item-Insert-JS/bootstrap-4.4.1.js"></script>
+  <?php
+		include_once '../../footer.php'
+	?>
 
   </body>
 </html>
