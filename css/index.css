@@ -30,31 +30,3 @@
 		padding-top: 170px;
 	}
 }
-
-.cat-card-wrapper .card{
-	/* background-color: red; */
-	background-color: #fcfcfc;
-	padding: 20px;
-	margin-bottom: 30px;
-}
-
-.cat-card-wrapper .card .card-body{
-	padding: 1.25rem 0 0 0;
-}
-
-
-.cat-card-wrapper .card .card-bottom{
-	/* background-color: red; */
-	width: 100%;
-	height: 30px;
-	line-height: 30px;
-	font-size: 20px;
-}
-
-.cat-card-wrapper .card .card-bottom button{
-	float: right;
-	height: 30px;
-	line-height: 30px;
-	padding: 0 10px 0 10px;
-	margin: 0;
-}
