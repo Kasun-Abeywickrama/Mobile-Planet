@@ -8,7 +8,7 @@
     <!-- Bootstrap -->
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/Item-Insert.css" rel="stylesheet" type="text/css">
-	<link href="../css/headerAndSidebar.css" rel="stylesheet" type="text/css">
+	<link href="../../css/HeaderAndFooter.css" rel="stylesheet" type="text/css">
 	<script src="../js/Item-Insert-JS/Item-Insert.js"></script>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
@@ -16,7 +16,7 @@
 
 	<! Including the haeder file for the document >
 	<?php
-		include_once 'header.php'
+		include_once '../../header.php'
 	?>
 
     <! Getting the item number from the Item-Insert Page and assigning exsiting item data to variables >
@@ -24,7 +24,16 @@
 	
 		$updateID = $_POST["upID"];
 
-        include '../../includes/dbConn.inc.php';
+        $serverName = "localhost";
+		$userName = "root";
+		$password = "";
+		$database = "e-commerce-db";
+			
+		$conn = new mysqli($serverName, $userName, $password, $database);
+		if($conn->connect_error)
+		{
+			die("Database connection failed".$conn->connect_error);
+		}
 		
         $se1 = "SELECT itemName, type, description, sellingPrice, buyingPrice FROM item WHERE itemId = '$updateID'";
         $ex1 = $conn->query($se1);
@@ -45,9 +54,9 @@
   	<div class="container-fluid">
   	  <div class="container">
   	    <center><div class="jumbotron">
-  	      	<label class="l1" style="text-align:center;">UPDATE THE PRODUCT DETAILS<br></label>
+  	      	<label class="l" style="text-align:center;">UPDATE THE PRODUCT DETAILS<br></label>
 
-		  	<form name="itemInsert" method="post" action="Item-Update-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
+		  	<form name="itemInsert" method="post" action="Item-Update-Query.php" onsubmit="return validateItemInsert()">
 
 			  	<div align="left" class="form-group">
 			    	<label for="ItemID">PRODUCT ID&nbsp;</label>
@@ -104,6 +113,9 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/Item-Insert-JS/popper.min.js"></script> 
 <script src="../js/Item-Insert-JS/bootstrap-4.4.1.js"></script>
+<?php
+    include_once '../../footer.php'
+?>
 
 </body>
 </html>
