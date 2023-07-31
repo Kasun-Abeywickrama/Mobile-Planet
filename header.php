@@ -29,7 +29,12 @@
         <a href="index.php"><div class="logo"></div></a>
         <div class="search-input-wrapper">
           <form class="form-inline my-2 my-lg-0">
-            <input type="text" class="search-bar-input search-input" style="width: calc(100% - 30px);" placeholder="Search" style="padding-left: 10px;">
+            <div class="input-wrapper">            
+                <input type="text" id="search-val" oninput="search();" ininput="x();" class="search-bar-input search-input" placeholder="Search" style="padding-left: 10px;" oninput="search();">
+                <div class="search-bar-body" id="s-body" style="width: 100%;">
+                   
+                </div>
+            </div>
             <button class="search-bar-input-btn search-btn"><i class='bx bx-search'></i></button>
           </form>
         </div>
@@ -111,3 +116,22 @@
       </div>
     </div>
   </header>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>
+         function search(){
+          $(document).ready(function(){
+            $.ajax({
+                type:'POST',
+                url:'includes/search.inc.php',
+                data:{
+                    sKey:$('#search-val').val()
+                },
+                success:function(data){
+                    $('#s-body').html(data);
+                }
+            });
+          });
+         }               
+</script>
+
+

@@ -4,7 +4,16 @@
 
             $deleteID = $_POST["delID"];
 
-            include '../../includes/dbConn.inc.php';
+            $serverName = "localhost";
+		    $userName = "root";
+            $password = "";
+            $database = "e-commerce-db";
+                
+            $conn = new mysqli($serverName, $userName, $password, $database);
+            if($conn->connect_error)
+            {
+                die("Database connection failed".$conn->connect_error);
+            }
 
             $del1 = "SELECT * FROM item WHERE itemId='$deleteID'";
             $exe1 = $conn->query($del1);

@@ -11,7 +11,16 @@
 			$sellingPrice = $_POST["itemSellingPrice"];
 			$buyingPrice = $_POST["itemBuyingPrice"];
 
-			include '../../includes/dbConn.inc.php';
+			$serverName = "localhost";
+			$userName = "root";
+			$password = "";
+			$database = "e-commerce-db";
+
+			$conn = new mysqli($serverName, $userName, $password, $database);
+			if($conn->connect_error)
+			{
+				die("Database connection failed".$conn->connect_error);
+			}
 
 			$sel = "select itemId from item order by itemId desc limit 1";
 
