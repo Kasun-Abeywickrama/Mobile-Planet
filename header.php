@@ -49,31 +49,54 @@
                       class="sr-only">(current)</span></a>
                 </li>
 
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Phones </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item"
-                      href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Phones </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+
+                        <?php 
+                          include_once 'includes/dbConn.inc.php';
+                          $query = "SELECT * FROM brand WHERE brandId IN (SELECT DISTINCT brandId FROM item WHERE categoryId='1')";
+                          $result = mysqli_query($conn,$query);
+                          if($result){
+                            while($record = mysqli_fetch_assoc($result)){
+                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                            }
+                          }
+                        ?>
+                    </div>
+                </li> 
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tablets </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+
+                        <?php 
+                          include_once 'includes/dbConn.inc.php';
+                          $query = "SELECT * FROM brand WHERE brandId IN (SELECT DISTINCT brandId FROM item WHERE categoryId='2')";
+                          $result = mysqli_query($conn,$query);
+                          if($result){
+                            while($record = mysqli_fetch_assoc($result)){
+                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                            }
+                          }
+                        ?>
                   </div>
                 </li>
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3"
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tablets&nbsp; </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item"
-                      href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accessories </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+
+                        <?php 
+                          include_once 'includes/dbConn.inc.php';
+                          $query = "SELECT * FROM brand WHERE brandId IN (SELECT DISTINCT brandId FROM item WHERE categoryId='3')";
+                          $result = mysqli_query($conn,$query);
+                          if($result){
+                            while($record = mysqli_fetch_assoc($result)){
+                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                            }
+                          }
+                        ?>
                   </div>
                 </li>
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2"
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accessories&nbsp;
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item"
-                      href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
+
+
+
 
                 <li class="nav-item"> <a class="nav-link" href="#">About us&nbsp;</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="contact-us.php">Contact us&nbsp;</a> </li>
