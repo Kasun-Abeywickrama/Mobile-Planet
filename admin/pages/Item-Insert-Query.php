@@ -21,7 +21,7 @@
 			$row = mysqli_fetch_array($lastId);
 
 
-			$ins = "insert into item (itemId, itemName, type, description, sellingPrice, buyingPrice, categoryId, brandId) values($row[0]+1, '$itemName', '$itemType', '$itemDescription', '$sellingPrice', '$buyingPrice', '$itemType', '$itemType')";
+			$ins = "insert into item (itemId, itemName, type, description, sellingPrice, buyingPrice, categoryId, brandId) values($row[0]+1, '$itemName', '$itemType', '$itemDescription', '$sellingPrice', '$buyingPrice', $itemType, $itemType)";
 
 			if($conn->query($ins) == TRUE)
 			{

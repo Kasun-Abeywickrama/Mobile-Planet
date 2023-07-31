@@ -16,7 +16,7 @@
             if($conn->query($up1) == TRUE)
             {
                 unlink("../../images/$itemID.png");
-				$move_file = move_uploaded_file($tmpImgName, "../../images/$itemID.png");
+				$move_file = move_uploaded_file($tmpImgName1, "../../images/$itemID.png");
                 echo '<script>alert("Data has been updated successfully")</script>';
                 echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
             }

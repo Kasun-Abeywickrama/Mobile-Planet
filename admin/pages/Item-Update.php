@@ -47,7 +47,7 @@
   	    <center><div class="jumbotron">
   	      	<label class="l1" style="text-align:center;">UPDATE THE PRODUCT DETAILS<br></label>
 
-		  	<form name="itemInsert" method="post" action="Item-Update-Query.php" onsubmit="return validateItemInsert()">
+		  	<form name="itemInsert" method="post" action="Item-Update-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
 
 			  	<div align="left" class="form-group">
 			    	<label for="ItemID">PRODUCT ID&nbsp;</label>
