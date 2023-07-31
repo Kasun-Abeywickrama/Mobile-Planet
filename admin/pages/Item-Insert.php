@@ -22,7 +22,7 @@
   	  <div class="container">
   	    <center><div class="jumbotron">
   	      	<label class="l1" style="text-align:center;">ENTER THE PRODUCT DETAILS<br></label>
-		  	<form name="itemInsert" method="post" action="Item-Insert-Query.php" onsubmit="return validateItemInsert()">
+		  	<form name="itemInsert" method="post" action="Item-Insert-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemName">PRODUCT NAME&nbsp;</label>
 			    	<input type="text" class="form-control" name="itemName" placeholder="Enter the product name">
@@ -30,10 +30,10 @@
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemType">TYPE&nbsp;</label>
 			    	<select name="itemType" class="form-control" >
-						<option value="0">Select the product type</option>
-						<option value="Mobile Phone">Mobile Phone</option>
-						<option value="Tablet">Tablet</option>
-						<option value="Headphone">Headphone</option>
+						<option value="0">Select the product Category</option>
+						<option value="1">Mobile Phone</option>
+						<option value="2">Tablet</option>
+
 				  	</select>
 		    	</div>
 			  

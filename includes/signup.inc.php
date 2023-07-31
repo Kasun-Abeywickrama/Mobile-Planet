@@ -43,12 +43,25 @@
             
         } else {
             // If there are no errors, proceed with the signup process
+
             $sql = "insert into user(userName,Password,adminOrCustomer) values('$un','$hpwd','0')";
             if($conn->query($sql) == TRUE){
                 echo "Recode Updated Successfully";
             }else{
                 echo "error Updating Record".$conn->error;
             }
+
+            //Creating the cart according for the user
+            $selID = "select userId from user order by userId desc limit 1";
+            $exeID = $conn->query($selID);
+            $row = mysqli_fetch_array($exeID);
+
+            $sqlcart = "insert into cartwishlist(cart, userId) values(1, $row[0])";
+            if($conn->query($sqlcart) == FALSE)
+            {
+                echo "Cart creation failed".$conn->error;
+            }
+            
         }
     }else{
         header('Location:../signin.php');
