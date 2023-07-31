@@ -43,7 +43,7 @@
             
         } else {
             // If there are no errors, proceed with the signup process
-            $sql = "insert into user(userName,Password) values('$un','$hpwd')";
+            $sql = "insert into user(userName,Password,adminOrCustomer) values('$un','$hpwd','0')";
             if($conn->query($sql) == TRUE){
                 echo "Recode Updated Successfully";
             }else{

@@ -7,11 +7,24 @@
         <div class="welocome">Welcome to Mobile Planet</div>
         <div class="top-bar-links-wrapper">
           <ul>
+            <?php
+                if(isset($_SESSION['log_name'])){
+                  include_once 'includes/dbConn.inc.php';
+                  $query = "select adminOrCustomer from user where userId=".$_SESSION['log_id']."";
+                  $result = mysqli_query($conn,$query);
+                  $record = mysqli_fetch_assoc($result);
+                  if($record['adminOrCustomer'] == "1"){
+                    echo '
+                    <a href="admin/pages/dashboard.php">
+                    <li><i class="bx bxs-location-plus"></i><span>Admin Dashboard</span></li>
+                    </a>
+                    ';
+                  }
+                }
+            ?>
+          
             <a href="wishlist.php">
-              <li><i class='bx bxs-location-plus'></i><span>Store Location</span></li>
-            </a>
-            <a href="wishlist.php">
-              <li><i class='bx bxs-heart'></i><span>Wish list</span></li>
+              <li><i class='bx bxs-heart'></i><span>Store Location</span></li>
             </a>
             <a href="cart.php">
               <li><i class='bx bxs-cart'></i><span>Cart</span></li>
@@ -63,7 +76,7 @@
                           $result = mysqli_query($conn,$query);
                           if($result){
                             while($record = mysqli_fetch_assoc($result)){
-                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                              echo '<form action="category.php" method="post" style="padding-bottom:5px;"><input type="hidden" name="cat-name" value="Mobile Phones"><input type="hidden" name="cat-id" value="1"><button style="width:100%; height:30px; background-color:white; border:none; text-align: left;" name="submit">'.$record["brandName"].'</button></form>';
                             }
                           }
                         ?>
@@ -78,12 +91,12 @@
                           $result = mysqli_query($conn,$query);
                           if($result){
                             while($record = mysqli_fetch_assoc($result)){
-                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                              echo '<form action="category.php" method="post" style="padding-bottom:5px;"><input type="hidden" name="cat-name" value="Tablets"><input type="hidden" name="cat-id" value="2"><button style="width:100%; height:30px; background-color:white; border:none; text-align: left;" name="submit">'.$record["brandName"].'</button></form>';
                             }
                           }
                         ?>
-                  </div>
-                </li>
+                    </div>
+                </li> 
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accessories </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
 
@@ -93,12 +106,13 @@
                           $result = mysqli_query($conn,$query);
                           if($result){
                             while($record = mysqli_fetch_assoc($result)){
-                              echo '<a class="dropdown-item" href="#">'.$record["brandName"].'</a>';
+                              echo '<form action="category.php" method="post" style="padding-bottom:5px;"><input type="hidden" name="cat-name" value="Accessories"><input type="hidden" name="cat-id" value="3"><button style="width:100%; height:30px; background-color:white; border:none; text-align: left;" name="submit">'.$record["brandName"].'</button></form>';
                             }
                           }
                         ?>
-                  </div>
-                </li>
+                    </div>
+                </li> 
+
 
 
 
