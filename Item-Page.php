@@ -1,3 +1,10 @@
+
+<?php
+	if(!isset($_POST['submit'])){
+        header("Location: index.php?error=error");
+	}
+?>
+
 <html>
 <head>
 	 
@@ -35,8 +42,9 @@
 </div>
 	      <div class="col-lg-6">
 	        <div class="jumbotron">
-	          <h1 class="display-4">SAMSUNG GALAXY S20 PRO</h1>
-	          <h1 class="display-41">RS. 75 000/=&nbsp;</h1>
+	          <h1 class="display-4"><?php echo $_POST['item-name']; ?></h1>
+	          <h1 class="display-41"><?php echo $_POST['item-price']; ?></h1>
+
 	          
               <div id="accordion1" role="tablist">
                 <div class="card">
@@ -59,8 +67,8 @@
                 
               </div>
               <p><br>
-		
-                <a class="btn btn-primary btn-lg" href="#" id="b1">Buy</a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-lg" href="Cart-Update-Query.php" type="button" id="b2">Add to Cart</a></p>
+                <a class="btn btn-primary btn-lg" href="#" role="button" id="b1">Buy</a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-lg" href="#" role="button" id="b2">Add to Cart</a></p>
+              
             </div>
 </div>
         </div>

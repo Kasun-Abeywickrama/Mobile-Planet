@@ -8,32 +8,32 @@
     <!-- Bootstrap -->
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/Item-Insert.css" rel="stylesheet" type="text/css">
-	<link href="../css/headerAndSidebar.css" rel="stylesheet" type="text/css">
+	<link href="../../css/HeaderAndFooter.css" rel="stylesheet" type="text/css">
 	<script src="../js/Item-Insert-JS/Item-Insert-Validate.js"></script>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
 	<?php
-		include_once 'header.php'
+		include_once '../../header.php'
 	?>
-    
 
 
   	<div class="container-fluid">
   	  <div class="container">
   	    <center><div class="jumbotron">
   	      	<label class="l1" style="text-align:center;">ENTER THE PRODUCT DETAILS<br></label>
-		  	<form name="itemInsert" method="post" action="Item-Insert-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
+		  	<form name="itemInsert" method="post" action="Item-Insert-Query.php" onsubmit="return validateItemInsert()">
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemName">PRODUCT NAME&nbsp;</label>
 			    	<input type="text" class="form-control" name="itemName" placeholder="Enter the product name">
 				</div>
 			  	<div align="left" class="form-group">
-			    	<label for="inputItemType">Category&nbsp;</label>
+			    	<label for="inputItemType">TYPE&nbsp;</label>
 			    	<select name="itemType" class="form-control" >
-						<option value="0">Select the product Category</option>
-						<option value="1">Mobile Phone</option>
-						<option value="2">Tablet</option>
+						<option value="0">Select the product type</option>
+						<option value="Mobile Phone">Mobile Phone</option>
+						<option value="Tablet">Tablet</option>
+						<option value="Headphone">Headphone</option>
 				  	</select>
 		    	</div>
 			  
@@ -112,6 +112,9 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/Item-Insert-JS/popper.min.js"></script> 
   <script src="../js/Item-Insert-JS/bootstrap-4.4.1.js"></script>
+  <?php
+		include_once '../../footer.php'
+	?>
 
   </body>
 </html>
