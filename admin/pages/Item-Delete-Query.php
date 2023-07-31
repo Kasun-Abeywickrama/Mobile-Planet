@@ -19,7 +19,8 @@
             $exe1 = $conn->query($del1);
 
             if($exe1->num_rows == 1)
-            {     
+            {    
+                unlink("../../images/$deleteID.png") ;
                 $del2 = "DELETE FROM item WHERE itemId='$deleteID'";
                 $exe2 = $conn->query($del2);
                 echo '<script>alert("Product Successfully Deleted")</script>';
