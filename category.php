@@ -24,31 +24,53 @@
       <div class="container title">
         <h3><?php echo $_POST['cat-name']; ?></h3>
       </div>
-      <div class="container cat-card-wrapper">
-        <div class="row">
             <?php
-              include_once 'includes/dbconn.inc.php';
-              $query = "select * from topsales";
+        include_once 'includes/dbConn.inc.php';
+        $query = "SELECT * FROM brand WHERE brandId IN (SELECT DISTINCT brandId FROM item WHERE categoryId=".$_POST['cat-id'].")";
               $result = mysqli_query($conn,$query);
-
+        if($result){
               while($record = mysqli_fetch_assoc($result)){
+            echo '
+            <div class="container title">
+               <h3>'.$record["brandName"].'</h3>
+            </div>
+            ';
+            echo '
+              <div class="container cat-card-wrapper">
+              <div class="row">
+            ';
+            $query = "select * from item where categoryId = ".$_POST['cat-id']." and brandId = ".$record['brandId']."";
+            $result1 = mysqli_query($conn,$query);
+            // while($record1 = mysqli_fetch_assoc($result)){
+            //   echo $record1['sellingPrice'];
+            // }
+            while($record1 = mysqli_fetch_assoc($result1)){
+              $itemName = $record1["itemName"];
+              $itemPrice = $record1["sellingPrice"];
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
                   <div class="card">
-                    <img src="assets\mobile-phones\\'.$record['name'].'.png" alt="asc">
+                    <img src="assets\mobile-phones\\'.$itemName.'.png" alt="asc">
                     <div class="card-body">
                       <form action="Item-Page.php" name="card-form" method="post">
-                      <h5 class="card-title" >'.$record['name'].'</h5><input type="hidden" name="item-name" value="'.$record['name'].'"><input type="hidden" name="item-price" value="'.$record['price'].'">
-                      <div class="card-bottom"><strong>'.$record['price'].'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
+                      <h5 class="card-title" >'.$itemName.'</h5><input type="hidden" name="item-name" value="'.$itemName.'"><input type="hidden" name="item-price" value="'.$itemPrice.'">
+                      <div class="card-bottom"><strong>'.$itemPrice.'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
                     </div>
                     </form>
                   </div>
                 </div>
                 ';
               }
-            ?>
+              echo '
         </div>
       </div>
+            ';
+            }
+          }else{
+          echo 'Does not exist any brand';
+        }
+        
+      ?>
     </div>
     </div>
     <?php include_once 'footer.php'; ?>

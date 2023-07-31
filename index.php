@@ -87,16 +87,16 @@
         <div class="row">
             <?php
               include_once 'includes/dbconn.inc.php';
-              $query = "select * from categories";
+              $query = "select * from category";
               $result = mysqli_query($conn,$query);
               while($record = mysqli_fetch_assoc($result)){
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
                   <div class="card">
-                    <img src="assets\mobile-phones\\'.$record['name'].'.png" alt="asc">
+                    <img src="assets\mobile-phones\\'.$record['categoryName'].'.png" alt="asc">
                     <div class="card-body">
                       <form action="category.php" name="card-form" method="post">
-                      <h5 class="card-title" >'.$record['name'].'</h5><input type="hidden" name="cat-name" value="'.$record['name'].'">
+                      <h5 class="card-title" >'.$record['categoryName'].'</h5><input type="hidden" name="cat-name" value="'.$record['categoryName'].'"><input type="hidden" name="cat-id" value="'.$record['categoryId'].'">
                       <div class="card-bottom"><button type="submit" class="btn btn-primary" name="submit">See more</button></div>
                     </div>
                     </form>

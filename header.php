@@ -29,7 +29,7 @@
         <a href="index.php"><div class="logo"></div></a>
         <div class="search-input-wrapper">
           <form class="form-inline my-2 my-lg-0">
-            <input type="text" class="search-bar-input search-input" placeholder="Search" style="padding-left: 10px;">
+            <input type="text" class="search-bar-input search-input" style="width: calc(100% - 30px);" placeholder="Search" style="padding-left: 10px;">
             <button class="search-bar-input-btn search-btn"><i class='bx bx-search'></i></button>
           </form>
         </div>
