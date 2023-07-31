@@ -124,9 +124,10 @@ footer {
 
 }
 
-.search-input-wrapper input {
+.search-input input {
 	/*background-color: aqua;*/
-	width: calc(100% - 30px);
+	padding-left: 10px;
+    width: calc(100% - 30px);
 }
 
 .search-btn {

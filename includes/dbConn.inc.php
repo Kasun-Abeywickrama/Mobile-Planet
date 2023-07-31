@@ -3,7 +3,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "e-commerce-db";
+    $database = "e_commerce_db";
 
     //Connection String to Connect to the database
     $conn = new mysqli($host, $username, $password, $database);
