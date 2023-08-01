@@ -25,7 +25,6 @@
                     // Password is correct, user is authenticated
                     echo "<script> alert('Authentication Sucessfully completed !'); </script>";
                     $_SESSION['log_name'] = $user['userName'];
-                    $_SESSION['log_id'] = $user['userId'];
                     header('Location:../index.php');
                 }else{
                     $errors [] = "Invalid Username or Password !";
