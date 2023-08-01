@@ -1,14 +1,15 @@
 <div class="side-bar">
+
     <div class="side-bar-logo">
         <div class="logo-icon-img"></div>
         <div class="logo-icon" id="logo-name">MobilePlanet</div>
     </div>
     <div class="links-wrapper">
         <ul>
-            <li><a href=""><i class='bx bxs-dashboard'></i>
+            <li><a href="dashboard.php"><i class='bx bxs-dashboard'></i>
                     <div> Dashboard</div>
                 </a></li>
-            <li><a href=""><i class='bx bx-cuboid'></i>
+            <li><a href="Item-Insert.php"><i class='bx bx-cuboid'></i>
                     <div>Product</div>
                 </a></li>
             <li><a href=""><i class='bx bxs-package'></i>

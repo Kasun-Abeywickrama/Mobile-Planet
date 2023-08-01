@@ -10,17 +10,9 @@
 			$itemDescription = $_POST["itemDescription"];
 			$sellingPrice = $_POST["itemSellingPrice"];
 			$buyingPrice = $_POST["itemBuyingPrice"];
+			$tmpImgName = $_FILES["itemPhoto"]["tmp_name"];
 
-			$serverName = "localhost";
-			$userName = "root";
-			$password = "";
-			$database = "e-commerce-db";
-
-			$conn = new mysqli($serverName, $userName, $password, $database);
-			if($conn->connect_error)
-			{
-				die("Database connection failed".$conn->connect_error);
-			}
+			include '../../includes/dbConn.inc.php';
 
 			$sel = "select itemId from item order by itemId desc limit 1";
 
@@ -29,10 +21,12 @@
 			$row = mysqli_fetch_array($lastId);
 
 
-			$ins = "insert into item (itemId, itemName, type, description, sellingPrice, buyingPrice) values($row[0]+1, '$itemName', '$itemType', '$itemDescription', '$sellingPrice', '$buyingPrice')";
+			$ins = "insert into item (itemId, itemName, type, description, sellingPrice, buyingPrice, categoryId, brandId) values($row[0]+1, '$itemName', '$itemType', '$itemDescription', '$sellingPrice', '$buyingPrice', $itemType, $itemType)";
 
 			if($conn->query($ins) == TRUE)
 			{
+				$id = $row[0]+1;
+				$move_file = move_uploaded_file($tmpImgName, "../../images/$id.png");
 				echo '<script>alert("Record inserted successfully")</script>';
 				echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
 			}
