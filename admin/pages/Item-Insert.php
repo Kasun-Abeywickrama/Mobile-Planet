@@ -34,6 +34,21 @@
 						<option value="0">Select the product Category</option>
 						<option value="1">Mobile Phone</option>
 						<option value="2">Tablet</option>
+                        <option value="3">Accessory</option>
+				  	</select>
+		    	</div>
+                <div align="left" class="form-group">
+			    	<label for="inputBrandType">BRAND&nbsp;</label>
+			    	<select name="itemBrand" class="form-control" >
+						<?php
+                            include_once '../../includes/dbConn.inc.php';
+                            $sel1 = "select brandId, brandName from brand";
+                            $exe1 = $conn->query($sel1);
+                            while($row = mysqli_fetch_array($exe1))
+                            {
+                                echo "<option value='$row[0]'>$row[1]</option>";
+                            }
+                        ?>
 				  	</select>
 		    	</div>
 			  

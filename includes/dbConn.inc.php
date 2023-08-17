@@ -1,5 +1,10 @@
 <?php 
     // Database credentials
+    /*$host = "sql309.infinityfree.com";
+    $username = "if0_34731176";
+    $password = "KVrWl3mXlEV";
+    $database = "if0_34731176_e_commerce_db";*/
+
     $host = "localhost";
     $username = "root";
     $password = "";

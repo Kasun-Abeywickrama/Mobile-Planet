@@ -39,18 +39,18 @@
               <div class="container cat-card-wrapper">
               <div class="row">
             ';
-            $query = "select * from item where categoryId = ".$_POST['cat-id']." and brandId = ".$record['brandId']."";
+            $query = "select * from item where categoryId = ".$_POST['cat-id']."";
             $result1 = mysqli_query($conn,$query);
             // while($record1 = mysqli_fetch_assoc($result)){
             //   echo $record1['sellingPrice'];
             // }
             while($record1 = mysqli_fetch_assoc($result1)){
-              $itemName = $record1["itemName"];
+              $itemName = $record1["itemId"];
               $itemPrice = $record1["sellingPrice"];
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
                   <div class="card">
-                    <img src="assets\mobile-phones\\'.$itemName.'.png" alt="asc">
+                    <img src="assets\ProductImages\\'.$itemName.'.png" alt="asc">
                     <div class="card-body">
                       <form action="Item-Page.php" name="card-form" method="post">
                       <h5 class="card-title" >'.$itemName.'</h5><input type="hidden" name="item-name" value="'.$itemName.'"><input type="hidden" name="item-price" value="'.$itemPrice.'">

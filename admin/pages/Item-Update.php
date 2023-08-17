@@ -26,7 +26,7 @@
 
         include '../../includes/dbConn.inc.php';
 		
-        $se1 = "SELECT itemName, type, description, sellingPrice, buyingPrice FROM item WHERE itemId = '$updateID'";
+        $se1 = "SELECT itemName, description, sellingPrice, buyingPrice FROM item WHERE itemId = '$updateID'";
         $ex1 = $conn->query($se1);
 
 		if($ex1->num_rows == 1)
@@ -36,7 +36,7 @@
 		else
 		{
 			echo '<script>alert("Inavalid Product ID")</script>';
-			echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
+			echo "<script>window.location.replace('http://kasunthiwanka.epizy.com/admin/pages/Item-Insert.php')</script>";
 			die();
 		} 
     ?>
@@ -63,25 +63,25 @@
 			    	<label for="inputItemType">TYPE&nbsp;</label>
 			    	<select name="itemType" class="form-control">
 						<option value="0">Select product the type</option>
-						<option value="Mobile Phone">Mobile Phone</option>
-						<option value="Tablet">Tablet</option>
-						<option value="Headphone">Headphone</option>
+						<option value="1">Mobile Phone</option>
+						<option value="2">Tablet</option>
+						<option value="3">Accessory</option>
 				  	</select>
 		    	</div>
 			  
 		    	<div align="left" class="form-group">
 			    	<label for="inputItemDesc">DESCRIPTION&nbsp;</label><br>
-			    	<textarea class="form-control" name="itemDescription" cols="65" rows="8" ><?php echo "$row[2]"?></textarea>    
+			    	<textarea class="form-control" name="itemDescription" cols="65" rows="8" ><?php echo "$row[1]"?></textarea>    
 	        	</div>
 			  
 			  	<div align="left" class="form-group">
 			    	<label for="inputSellingPrice">SELLING PRICE (Rs)&nbsp;</label>
-			    	<input type="text" class="form-control" name="itemSellingPrice" value="<?php echo "$row[3]"?>">
+			    	<input type="text" class="form-control" name="itemSellingPrice" value="<?php echo "$row[2]"?>">
 		    	</div>
 			  
 			  	<div align="left" class="form-group">
 			    	<label for="inputBuyingPrice">BUYING PRICE (Rs)&nbsp;</label>
-			    	<input type="text" class="form-control" name="itemBuyingPrice" value="<?php echo "$row[4]"?>">
+			    	<input type="text" class="form-control" name="itemBuyingPrice" value="<?php echo "$row[3]"?>">
 		    	</div>
 
 			  	<div align="left" class="form-group">

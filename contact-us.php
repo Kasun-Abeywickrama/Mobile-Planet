@@ -60,7 +60,7 @@
             <div class="container">
                 <h2 class="text-center">Our location</h2>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.402392168639!2d79.92386107333095!3d6.842268119380374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2516c9a3676c1%3A0x60ebb44589246f33!2sMobile%20Planet!5e0!3m2!1sen!2slk!4v1689067967112!5m2!1sen!2slk"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.582438458324!2d80.03778166477238!3d6.820531295070536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2523b05555555%3A0x546c34cd99f6f488!2sNSBM%20Green%20University!5e0!3m2!1sen!2slk!4v1690898785769!5m2!1sen!2slk"
                     width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>

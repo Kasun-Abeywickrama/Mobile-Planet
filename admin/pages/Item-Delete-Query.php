@@ -11,16 +11,16 @@
 
             if($exe1->num_rows == 1)
             {    
-                unlink("../../images/$deleteID.png") ;
+                unlink("../../assets/ProductImages/$deleteID.png") ;
                 $del2 = "DELETE FROM item WHERE itemId='$deleteID'";
                 $exe2 = $conn->query($del2);
                 echo '<script>alert("Product Successfully Deleted")</script>';
-                echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
+                echo "<script>window.location.replace('http://kasunthiwanka.epizy.com/admin/pages/Item-Insert.php')</script>";
             }
             else
             {
                 echo '<script>alert("Product does not Exists")</script>';
-                echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
+                echo "<script>window.location.replace('http://kasunthiwanka.epizy.com/admin/pages/Item-Insert.php')</script>";
             }
         ?>
     </body>

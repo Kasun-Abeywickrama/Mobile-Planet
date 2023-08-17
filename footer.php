@@ -18,9 +18,7 @@
           <div class="col-lg-3">
             <h4>Branches</h4>
             <div>
-              SMART MOBILE MAHARAGAMA - SMARTMOBILE.LK<br>
-              No.207/1/1C,High Level Road, Maharagama.<br>
-              Opposite To Gammana Road, Near By People's Leasing Maharagama
+                Pitipana - Thalagala Rd, Homagama          
             </div>
           </div>
           <div class="col-lg-3">

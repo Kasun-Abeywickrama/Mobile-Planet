@@ -11,6 +11,7 @@
 			$sellingPrice = $_POST["itemSellingPrice"];
 			$buyingPrice = $_POST["itemBuyingPrice"];
 			$tmpImgName = $_FILES["itemPhoto"]["tmp_name"];
+            $itemBrand = $_POST["itemBrand"];
 
 			include '../../includes/dbConn.inc.php';
 
@@ -21,19 +22,19 @@
 			$row = mysqli_fetch_array($lastId);
 
 
-			$ins = "insert into item (itemId, itemName, type, description, sellingPrice, buyingPrice, categoryId, brandId) values($row[0]+1, '$itemName', '$itemType', '$itemDescription', '$sellingPrice', '$buyingPrice', $itemType, $itemType)";
+			$ins = "insert into item (itemId, itemName, description, sellingPrice, buyingPrice, categoryId, brandId) values($row[0]+1, '$itemName', '$itemDescription', '$sellingPrice', '$buyingPrice', '$itemType', '$itemBrand')";
 
 			if($conn->query($ins) == TRUE)
 			{
 				$id = $row[0]+1;
-				$move_file = move_uploaded_file($tmpImgName, "../../images/$id.png");
+				$move_file = move_uploaded_file($tmpImgName, "../../assets/ProductImages/$id.png");
 				echo '<script>alert("Record inserted successfully")</script>';
-				echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
+				echo "<script>window.location.replace('http://kasunthiwanka.epizy.com/admin/pages/Item-Insert.php')</script>";
 			}
 			else
 			{
-				echo '<script>alert("Record unable to insert")</script>';
-				echo "<script>window.location.replace('http://localhost/admin/pages/item-Insert.php')</script>";
+				echo $conn->error;
+				
 			}
 	?>
     </body>

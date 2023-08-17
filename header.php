@@ -117,7 +117,7 @@
 
 
 
-                <li class="nav-item"> <a class="nav-link" href="#">About us&nbsp;</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="aboutus.php">About us&nbsp;</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="contact-us.php">Contact us&nbsp;</a> </li>
 
 

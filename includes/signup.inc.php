@@ -49,6 +49,12 @@
             }else{
                 echo "error Updating Record".$conn->error;
             }
+            
+            $sql1 = "select userId from user order by userId desc limit 1";
+            $result1 = mysqli_query($conn,$sql1);
+            $record1 = mysqli_fetch_assoc($result1);
+            $sql2 = "insert into cartwishlist(userId)  values(".$record1['userId'].")";
+            mysqli_query($conn,$sql2);
         }
     }else{
         header('Location:../signin.php');

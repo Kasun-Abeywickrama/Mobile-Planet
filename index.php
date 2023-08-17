@@ -54,7 +54,7 @@
         <div class="row">
             <?php
               include_once 'includes/dbconn.inc.php';
-              $query = "select * from topsales";
+              $query = "select * from item";
               $result = mysqli_query($conn,$query);
               // $itemName = "i Phone x";
               // $price = 25000.00;
@@ -63,11 +63,11 @@
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
                   <div class="card">
-                    <img src="assets\mobile-phones\\'.$record['name'].'.png" alt="asc">
+                    <img src="assets\ProductImages\\'.$record['itemId'].'.png" alt="asc">
                     <div class="card-body">
                       <form action="Item-Page.php" name="card-form" method="post">
-                      <h5 class="card-title" >'.$record['name'].'</h5><input type="hidden" name="item-name" value="'.$record['name'].'"><input type="hidden" name="item-price" value="'.$record['price'].'">
-                      <div class="card-bottom"><strong>'.$record['price'].'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
+                      <h5 class="card-title" >'.$record['itemName'].'</h5><input type="hidden" name="item-id" value="'.$record['itemId'].'"><input type="hidden" name="item-name" value="'.$record['itemName'].'"><input type="hidden" name="item-price" value="'.$record['sellingPrice'].'">
+                      <div class="card-bottom"><strong>'.$record['sellingPrice'].'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
                     </div>
                     </form>
                   </div>
@@ -93,7 +93,7 @@
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
                   <div class="card">
-                    <img src="assets\mobile-phones\\'.$record['categoryName'].'.png" alt="asc">
+                    <img src="assets\CategoryImages\\'.$record['categoryId'].'.png" alt="asc">
                     <div class="card-body">
                       <form action="category.php" name="card-form" method="post">
                       <h5 class="card-title" >'.$record['categoryName'].'</h5><input type="hidden" name="cat-name" value="'.$record['categoryName'].'"><input type="hidden" name="cat-id" value="'.$record['categoryId'].'">
