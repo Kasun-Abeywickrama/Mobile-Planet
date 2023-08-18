@@ -119,22 +119,28 @@ footer {
 .search-input-wrapper {
 	width: 90%;
 	max-width: 400px;
-	/*background-color: red;*/
+	/* background-color: red; */
 	height: fit-content;
+	z-index: 200;
 
 }
 
-.search-input-wrapper input {
-	/*background-color: aqua;*/
+.search-input-wrapper div{
+	/* background-color: aqua; */
+	display: flex;
+	flex-direction: column;
 	width: calc(100% - 30px);
+}
+
+.search-input-wrapper div input {
+	/*background-color: aqua;*/
+	width: 100%;
 }
 
 .search-btn {
 	width: 30px;
 	height: 30px;
 }
-
-
 
 
 @media screen and (max-width: 1050px) {
@@ -172,5 +178,14 @@ footer {
 	.navbar-brand {
 		display: none;
 	}
+}
+.input-wrapper{
+	position: relative;
+}
+.search-bar-body{
+	position: absolute;
+	top: 30px;
+	background-color: red;
+	width: 100%;
 }
 

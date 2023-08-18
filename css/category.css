@@ -1,14 +1,12 @@
-/* ---------------- index page body css -------------------*/
-
 .content-wrapper {
 	padding-top: 130px;
 	/*background-color: red;*/
 }
 
-.banner-wrapper img {
-	width: 100%;
-	height: 400px;
-
+@media screen and (max-width : 992px) {
+	.content-wrapper {
+		padding-top: 170px;
+	}
 }
 
 .title {
@@ -25,11 +23,6 @@
 	padding-top: 10px;
 }
 
-@media screen and (max-width : 992px) {
-	.content-wrapper {
-		padding-top: 170px;
-	}
-}
 
 .cat-card-wrapper .card{
 	/* background-color: red; */
