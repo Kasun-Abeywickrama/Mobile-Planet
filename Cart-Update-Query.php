@@ -11,7 +11,6 @@
                 if(!isset($_SESSION['log_id'])){
                     header('Location: index.php?error=error');
                 }
-                //
 
 
             //get the cart id

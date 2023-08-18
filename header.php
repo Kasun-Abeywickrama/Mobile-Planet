@@ -4,7 +4,7 @@
 <header>
     <div class="container-fluid">
       <div class="container-fluid top-bar">
-        <div class="welocome">Welcome to Mobile Planet</div>
+        <div class="welocome" title="Home">Welcome to Mobile Planet</div>
         <div class="top-bar-links-wrapper">
           <ul>
             <?php

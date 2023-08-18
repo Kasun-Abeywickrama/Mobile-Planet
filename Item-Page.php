@@ -75,8 +75,9 @@
                 
               </div>
               <p><br>
-				<form name="validateCart" action="Cart-Update-Query.php" method="post">
-					Qty: &nbsp; &nbsp; <input type="text" name="qty"><br><br>
+				<form name="validateCart" action="Cart-Update-Query.php" method="post" onsubmit="validateQty();">
+					Qty: &nbsp; &nbsp; <input type="text" name="qty" id="qty"><br><br>
+
 					<input type="hidden" name="item-id" value="<?php echo $_POST['item-id'];?>">
                     <input type="submit" class="btn btn-primary btn-lg"  id="b2" name="sub" value="Add to Cart">
 				</form>
@@ -84,12 +85,16 @@
             </div>
 </div>
         </div>
+
 	  </div>
 	</div>
 	<?php 
 		include_once 'footer.php'
 	?>
+
 	<script src="js/Item-Page-JS/bootstrap-4.4.1.js"> </script>
 	<script src="js/Item-Page-JS/jquery-3.4.1.min.js"></script>
 	<script src="js/Item-Page-JS/popper.min.js"></script>
+                       
+
 </html>
