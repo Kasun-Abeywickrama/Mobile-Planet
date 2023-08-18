@@ -11,13 +11,16 @@
 	<link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
+    <!-- This JavaScript code is used to check whether a quantity is inserted -->
     <script>
         function validateQTY()
         {
             if(document.validateCart.qty.value == "")
             {
                 alert("Please enter a Quantity");
+                return false;
             }
+            return true;
         }
     </script>
 </head>
@@ -36,19 +39,20 @@
 	<div class="container-fluid" id="wrapper1">
 	  <div class="container">
 	    <div class="row">
+          <!-- In this part, the image of the product is displayed -->
 	      <div class="col-lg-6">
 	        <div class="jumbotron">
                 <?php
-                    echo '
-                    		<img src="assets/ProductImages//'.$_POST['item-id'].'.png" class="img-fluid rounded" alt="Placeholder image" style="width:100%;">
-                    ';
+                    echo '<img src="assets/ProductImages//'.$_POST['item-id'].'.png" class="img-fluid rounded" alt="Placeholder image" style="width:100%;">';
                 ?>
             </div>
-</div>
+          </div>
+          
 	      <div class="col-lg-6">
+            <!-- In this part, the item name and the item price will be displayed -->
 	        <div class="jumbotron">
 	          <h1 class="display-4"><?php echo $_POST['item-name']; ?></h1>
-	          <h1 class="display-41"><?php echo $_POST['item-price']; ?></h1>
+	          <h1 class="display-41">RS. <?php echo $_POST['item-price']; ?></h1>
 
 	          
               <div id="accordion1" role="tablist">
@@ -75,9 +79,8 @@
                 
               </div>
               <p><br>
-				<form name="validateCart" action="Cart-Update-Query.php" method="post" onsubmit="validateQty();">
-					Qty: &nbsp; &nbsp; <input type="text" name="qty" id="qty"><br><br>
-
+				<form name="validateCart" action="Cart-Update-Query.php" method="post" onsubmit="return validateQTY()">
+					Qty: &nbsp; &nbsp; <input type="text" name="qty"><br><br>
 					<input type="hidden" name="item-id" value="<?php echo $_POST['item-id'];?>">
                     <input type="submit" class="btn btn-primary btn-lg"  id="b2" name="sub" value="Add to Cart">
 				</form>
@@ -85,16 +88,12 @@
             </div>
 </div>
         </div>
-
 	  </div>
 	</div>
 	<?php 
 		include_once 'footer.php'
 	?>
-
 	<script src="js/Item-Page-JS/bootstrap-4.4.1.js"> </script>
 	<script src="js/Item-Page-JS/jquery-3.4.1.min.js"></script>
 	<script src="js/Item-Page-JS/popper.min.js"></script>
-                       
-
 </html>

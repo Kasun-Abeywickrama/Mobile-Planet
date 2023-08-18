@@ -12,6 +12,12 @@ function validateItemInsert()
 		alert("Please select an item type");
 		x = 1;	
 	}
+
+    if(document.itemInsert.itemBrand.selectedIndex == 0)
+	{
+		alert("Please select an item Brand");
+		x = 1;	
+	}
 	
 	if(document.itemInsert.itemDescription.value.length < 50)
 	{
@@ -51,7 +57,6 @@ function validateItemInsert()
 	{
 		return true;
 	}
-	
 }
 	
 	// JavaScript Document

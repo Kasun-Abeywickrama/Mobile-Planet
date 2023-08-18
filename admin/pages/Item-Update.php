@@ -9,7 +9,7 @@
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/Item-Insert.css" rel="stylesheet" type="text/css">
 	<link href="../css/headerAndSidebar.css" rel="stylesheet" type="text/css">
-	<script src="../js/Item-Insert-JS/Item-Insert.js"></script>
+	<script src="../js/Item-Insert-JS/Item-Update-Validate.js"></script>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
@@ -21,12 +21,14 @@
 
     <! Getting the item number from the Item-Insert Page and assigning exsiting item data to variables >
     <?php
-	
-		$updateID = $_POST["upID"];
+        /* Getting the update item Name to a variable */
+		$updateName = $_POST["upName"];
 
+        /* Including the DB conncetion file */
         include '../../includes/dbConn.inc.php';
 		
-        $se1 = "SELECT itemName, description, sellingPrice, buyingPrice FROM item WHERE itemId = '$updateID'";
+        /* Getting all the data for the above item Name from the database */
+        $se1 = "SELECT itemId, description, sellingPrice, buyingPrice FROM item WHERE itemName = '$updateName'";
         $ex1 = $conn->query($se1);
 
 		if($ex1->num_rows == 1)
@@ -35,39 +37,30 @@
 		}
 		else
 		{
-			echo '<script>alert("Inavalid Product ID")</script>';
-			echo "<script>window.location.replace('http://kasunthiwanka.epizy.com/admin/pages/Item-Insert.php')</script>";
+			echo '<script>alert("Invalid Product Name")</script>';
+			echo "<script>window.location.replace('http://mobileplanet.lovestoblog.com/admin/pages/Item-Insert.php')</script>";
 			die();
 		} 
     ?>
 
-	<! Creating the form to update the item data with pre filled data>
   	<div class="container-fluid">
   	  <div class="container">
   	    <center><div class="jumbotron">
   	      	<label class="l1" style="text-align:center;">UPDATE THE PRODUCT DETAILS<br></label>
 
-		  	<form name="itemInsert" method="post" action="Item-Update-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
+            <!-- Creating and pre filling all the data of the update form using the stored database values -->
+
+		  	<form name="itemUpdate" method="post" action="Item-Update-Query.php" onsubmit="return validateItemUpdate()" enctype="multipart/form-data">
 
 			  	<div align="left" class="form-group">
 			    	<label for="ItemID">PRODUCT ID&nbsp;</label>
-			    	<input type="text" class="form-control" name="itemID" value="<?php echo "$updateID"?>" readonly>
+			    	<input type="text" class="form-control" name="itemID" value="<?php echo "$row[0]"?>" readonly>
 				</div>
 
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemName">PRODUCT NAME&nbsp;</label>
-			    	<input type="text" class="form-control" name="itemName" value="<?php echo "$row[0]"?>">
+			    	<input type="text" class="form-control" name="itemName" value="<?php echo "$updateName"?>">
 				</div>
-
-			  	<div align="left" class="form-group">
-			    	<label for="inputItemType">TYPE&nbsp;</label>
-			    	<select name="itemType" class="form-control">
-						<option value="0">Select product the type</option>
-						<option value="1">Mobile Phone</option>
-						<option value="2">Tablet</option>
-						<option value="3">Accessory</option>
-				  	</select>
-		    	</div>
 			  
 		    	<div align="left" class="form-group">
 			    	<label for="inputItemDesc">DESCRIPTION&nbsp;</label><br>
@@ -90,7 +83,8 @@
 		    	</div><br>
 
 			  	<div class="form-group">
-			    	<input type="submit" id="submit123" name="sub" class="form-control" value="UPDATE"> <br><input type="reset" name="res" class="form-control" id="reset123" value="CLEAR">
+			    	<input type="submit" id="submit123" name="sub" class="form-control" value="UPDATE"> <br>
+                    <input type="reset" name="res" class="form-control" id="reset123" value="CLEAR">
 		    	</div>
 			</form>
 		</div></center>
