@@ -47,6 +47,7 @@
             while($record1 = mysqli_fetch_assoc($result1)){
               $itemName = $record1["itemName"];
               $itemId = $record1["itemId"];
+
               $itemPrice = $record1["sellingPrice"];
                 echo '
                 <div class="col-12 col-md-6 col-lg-3">
@@ -56,6 +57,7 @@
                       <form action="Item-Page.php" name="card-form" method="post"">
                       <h5 class="card-title" >'.$itemName.'</h5><input type="hidden" name="item-id" value="'.$itemId.'"><input type="hidden" name="item-name" value="'.$itemName.'"><input type="hidden" name="item-price" value="'.$itemPrice.'">
                       <div class="card-bottom"><strong>Rs. '.$itemPrice.'</strong><button type="submit" class="btn btn-primary" name="submit">Buy Now</button></div>
+
                     </div>
                     </form>
                   </div>
@@ -75,8 +77,5 @@
     </div>
     </div>
     <?php include_once 'footer.php'; ?>
-
-
-
 </body>
 </html>

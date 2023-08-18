@@ -11,11 +11,7 @@
                 if(!isset($_SESSION['log_id'])){
                     header('Location: index.php?error=error');
                 }
-                //
 
-                // if(is_nan($_POST['qty'])){
-                //     header('Location: index.php?error=Invalid_Quantity');
-                // }
 
             //get the cart id
                 include_once 'includes/dbConn.inc.php';

@@ -25,6 +25,7 @@
                 <!-- Cart items will be dynamically added here using JavaScript -->
                 <form action="purchase.php" method="post">
                 <div class="">
+
                     
                     <table>
                         <thead>
@@ -34,7 +35,7 @@
                             <th>Total</th>
                         </thead>
                         <tbody>
-                        
+
                             <?php
                                 include_once 'includes/dbConn.inc.php';
                                 $cwIdSql = "select cwId from cartwishlist where userId =".$_SESSION['log_id'];
@@ -61,6 +62,7 @@
                                 echo '
                                     <input type="hidden" name="total-amount" value="'.$totalAmount.'">
                                     <input type="hidden" name="discount" value="0">
+
                                     <tfoot>
                                         <tr>
                                             <td></td>
@@ -84,6 +86,7 @@
 
 
              
+
             </div>
         </div>
     <?php include_once 'footer.php';?>
