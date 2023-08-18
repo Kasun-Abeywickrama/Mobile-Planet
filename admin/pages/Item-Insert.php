@@ -21,8 +21,13 @@
 
   	<div class="container-fluid">
   	  <div class="container">
-  	    <center><div class="jumbotron">
+  	    <center>
+            <div class="jumbotron">
   	      	<label class="l1" style="text-align:center;">ENTER THE PRODUCT DETAILS<br></label>
+            
+            <!-- Creating the form to insert the item details -->
+            <!-- User must enter all the item details including the image file-->
+
 		  	<form name="itemInsert" method="post" action="Item-Insert-Query.php" onsubmit="return validateItemInsert()" enctype="multipart/form-data">
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemName">PRODUCT NAME&nbsp;</label>
@@ -31,22 +36,32 @@
 			  	<div align="left" class="form-group">
 			    	<label for="inputItemType">Category&nbsp;</label>
 			    	<select name="itemType" class="form-control" >
-						<option value="0">Select the product Category</option>
-						<option value="1">Mobile Phone</option>
-						<option value="2">Tablet</option>
-                        <option value="3">Accessory</option>
+                        <option value="0">Select a Category</option>
+						<?php
+                            include_once '../../includes/dbConn.inc.php';
+                            /* There is an Category table in the database, it contains categoryID and categoryName. First we get all the categoryIDs and category names from the database.
+                            Then, we will display them as options in this select tag */
+                            $sel1 = "select categoryId, categoryName from category";
+                            $exe1 = $conn->query($sel1);
+                            while($row1 = mysqli_fetch_array($exe1))
+                            {
+                                echo "<option value='$row1[0]'>$row1[1]</option>";
+                            }
+                        ?>
 				  	</select>
 		    	</div>
                 <div align="left" class="form-group">
 			    	<label for="inputBrandType">BRAND&nbsp;</label>
 			    	<select name="itemBrand" class="form-control" >
+                        <option value="0">Select a Brand</option>
 						<?php
-                            include_once '../../includes/dbConn.inc.php';
-                            $sel1 = "select brandId, brandName from brand";
-                            $exe1 = $conn->query($sel1);
-                            while($row = mysqli_fetch_array($exe1))
+                            /* There is an brand table in the database, it contains brandID and brandName. First we get all the brandIDs and brand names from the database.
+                            Then, we will display them as options in this select tag */
+                            $sel2 = "select brandId, brandName from brand";
+                            $exe2 = $conn->query($sel2);
+                            while($row2 = mysqli_fetch_array($exe2))
                             {
-                                echo "<option value='$row[0]'>$row[1]</option>";
+                                echo "<option value='$row2[0]'>$row2[1]</option>";
                             }
                         ?>
 				  	</select>
@@ -72,7 +87,8 @@
 					<input type="file" class="form-control-file" name="itemPhoto">
 				</div><br>
 				<div class="form-group">
-					<input type="submit" id="submit123" name="sub" class="form-control" value="ENTER"> <br><input type="reset" name="res" class="form-control" id="reset123" value="CLEAR">
+					<input type="submit" id="submit123" name="sub" class="form-control" value="ENTER"> <br>
+                    <input type="reset" name="res" class="form-control" id="reset123" value="CLEAR">
 				</div>
 			</form>
 			<br>
@@ -81,11 +97,15 @@
 
 
 			<div class="jumbotron">
-				<label class="l1" id="updatelabel1" style="text-align:center;">ENTER THE PRODUCT ID OF THE PRODUCT THAT MUST BE UPDATED<br></label>
-  	      		<form name="itemUpdate" method="post" action="Item-Update.php">
+				<label class="l1" id="updatelabel1" style="text-align:center;">ENTER THE PRODUCT NAME OF THE PRODUCT THAT MUST BE UPDATED<br></label>
+
+                <!-- Creating the form for the user to edit the item Details stored in the database-->
+                <!-- User must enter the item Name of the item that must be updated-->
+
+  	      		<form name="itemUpdateName" method="post" action="Item-Update.php">
   	        		<div align="left" class="form-group">
-  	          			<label for="inputItemID">PRODUCT ID&nbsp;</label>
-  	          			<input type="text" class="form-control" name="upID" placeholder="Enter the product ID">
+  	          			<label for="inputItemName">PRODUCT NAME&nbsp;</label>
+  	          			<input type="text" class="form-control" name="upName" placeholder="Enter the product Name">
             		</div>
 					<br>
   	        		<div class="form-group">
@@ -99,11 +119,15 @@
 
 
 			<div class="jumbotron">
-				<label class="l1" id="deletelabel1" style="text-align:center;">ENTER THE PRODUCT ID OF THE PRODUCT THAT MUST BE DELETED<br></label>
-  	      		<form name="itemDelete" method="post" action="Item-Delete-Query.php">
+				<label class="l1" id="deletelabel1" style="text-align:center;">ENTER THE PRODUCT NAME OF THE PRODUCT THAT MUST BE DELETED<br></label>
+
+                <!-- Creating the form for the user to delete an item from the database-->
+                <!-- User must enter the item Name of the item that must be deleted-->
+
+  	      		<form name="itemDeleteName" method="post" action="Item-Delete-Query.php">
   	        		<div align="left" class="form-group">
-  	          			<label for="inputItemID1">PRODUCT ID&nbsp;</label>
-  	          			<input type="text" class="form-control" name="delID" placeholder="Enter the product ID">
+  	          			<label for="inputItemName1">PRODUCT NAME&nbsp;</label>
+  	          			<input type="text" class="form-control" name="delName" placeholder="Enter the product Name">
             		</div>
 					<br>
   	        		<div class="form-group">
