@@ -38,6 +38,7 @@
 	<script src="js/Item-Page-JS/popper.min.js"></script> 
 	<div class="container-fluid" id="wrapper1">
 	  <div class="container">
+       <br><br>
 	    <div class="row">
           <!-- In this part, the image of the product is displayed -->
 	      <div class="col-lg-6">
@@ -53,7 +54,7 @@
 	        <div class="jumbotron">
 	          <h1 class="display-4"><?php echo $_POST['item-name']; ?></h1>
 	          <h1 class="display-41">RS. <?php echo $_POST['item-price']; ?></h1>
-
+                <br>
 	          
               <div id="accordion1" role="tablist">
                 <div class="card">
@@ -86,7 +87,7 @@
 				</form>
                 </p>
             </div>
-</div>
+</div><br><br>
         </div>
 	  </div>
 	</div>
