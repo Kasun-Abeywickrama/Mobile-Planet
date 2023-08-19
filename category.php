@@ -11,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat</title>
 
-    <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link href="../css/headerAndFooter.css" rel="stylesheet" type="text/css">
-    <link href="../css/category.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
+    <link href="css/category.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>

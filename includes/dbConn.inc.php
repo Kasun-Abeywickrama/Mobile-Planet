@@ -8,7 +8,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "e_commerce_db";
+    $database = "e_commerce_db1";
 
     //Connection String to Connect to the database
     $conn = new mysqli($host, $username, $password, $database);

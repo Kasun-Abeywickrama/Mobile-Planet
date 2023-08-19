@@ -7,9 +7,9 @@
     <title>Cart</title>
 
     
-    <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link href="../css/headerAndFooter.css" rel="stylesheet" type="text/css">
-    <link href="../css/cart.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
+    <link href="css/cart.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <div class="cart">
                 <!-- Cart items will be dynamically added here using JavaScript -->
                 <form action="purchase.php" method="post">
-                <div class="">
+                <div class="carttable">
                     
                     <table>
                         <thead>

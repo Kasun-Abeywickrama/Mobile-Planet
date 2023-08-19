@@ -32,9 +32,9 @@
     <title>Contact us</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link href="../css/headerAndFooter.css" rel="stylesheet" type="text/css">
-    <link href="../css/contact-us.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
+    <link href="css/contact-us.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
