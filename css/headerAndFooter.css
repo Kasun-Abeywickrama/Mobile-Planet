@@ -107,6 +107,26 @@ background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgb
 	background: rgb(2,10,53);
 background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgba(18,180,214,1) 80%);
 }
+.container-fluid .container-fluid.nav-bar-wrapper {
+    border-color: #000000;
+    border-style: none;
+}
+.container-fluid .container-fluid.search-bar {
+    border-bottom-width: 0px;
+}
+.container-fluid .container-fluid.top-bar {
+    border-bottom-width: 0px;
+}
+.search-input-wrapper .form-inline.my-2.my-lg-0 .search-bar-input-btn.search-btn {
+	background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
+}
+
+
+
+
 
 .logo {
 	width: 320px;
@@ -172,15 +192,40 @@ background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgb
 	padding-top: 0;
 	padding-bottom: 0;
 }
+.container-fluid.nav-bar-wrapper .container .navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
+}
+
 
 .nav-bar-wrapper {
-	background-color: #F9F6FB;
+    background: rgb(2,10,53);
+    background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgba(18,180,214,1) 80%);
 }
 
 @media screen and (min-width: 992px) {
 	.navbar-brand {
-		display: none;
+    display: none;
+    color: #FFFFFF;
 	}
+.container .navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
+    color: #FFFFFF;
+}
+.navbar-nav.mr-auto .nav-item.active .nav-link {
+    color: #FFFFFF;
+}
+.navbar-nav.mr-auto .nav-item.dropdown #navbarDropdown1 {
+    color: #FFFFFF;
+}
+.navbar-nav.mr-auto .nav-item .nav-link {
+    color: #FFFFFF;
+}
+
+
+
+
 }
 .input-wrapper{
 	position: relative;
@@ -191,4 +236,3 @@ background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgb
 	background-color: red;
 	width: 100%;
 }
-

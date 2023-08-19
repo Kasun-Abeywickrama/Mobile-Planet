@@ -4,6 +4,12 @@
 	/*background-color: red;*/
 }
 
+.col-lg-6 .jumbotron{
+    background-color: white;
+    border-style: solid;
+    border-color: #000000;
+}
+
 .col-lg-6 .jumbotron .display-4 {
 	font-weight: bold;
 	color: #000000;
@@ -27,8 +33,7 @@
 	width: 100px;
 	height: 50px;
 }
-.col-lg-6 .jumbotron #button {
-}
+
 .col-lg-6 .jumbotron #button1 {
 	color: #000000;
 	background-color: #A619B1;
@@ -39,18 +44,6 @@
 
 
 
-
-
-
-.row .col-lg-6 .jumbotron {
-    background-color: #BDB9B9;
-}
-.display-41 {
-}
-#b1 {
-}
-#b2 {
-}
 .jumbotron p #b1 {
     background-color: #139749;
 }
@@ -61,4 +54,12 @@
 	#wrapper1 {
 		padding-top: 170px;
 	}
+}
+
+#accordion1 form #b2 {
+    border-width: 0px;
+    background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
 }

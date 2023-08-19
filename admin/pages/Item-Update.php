@@ -45,8 +45,10 @@
 
   	<div class="container-fluid">
   	  <div class="container">
-  	    <center><div class="jumbotron">
-  	      	<label class="l1" style="text-align:center;">UPDATE THE PRODUCT DETAILS<br></label>
+  	    <center>
+          <br><br><br>
+          <div class="jumbotron">
+  	      	<label class="l1" style="text-align:center;">UPDATE PRODUCT<br></label>
 
             <!-- Creating and pre filling all the data of the update form using the stored database values -->
 

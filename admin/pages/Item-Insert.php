@@ -22,8 +22,9 @@
   	<div class="container-fluid">
   	  <div class="container">
   	    <center>
+            <br><br><br>
             <div class="jumbotron">
-  	      	<label class="l1" style="text-align:center;">ENTER THE PRODUCT DETAILS<br></label>
+  	      	<label class="l1" style="text-align:center;">INSERT PRODUCT<br></label>
             
             <!-- Creating the form to insert the item details -->
             <!-- User must enter all the item details including the image file-->
@@ -97,7 +98,7 @@
 
 
 			<div class="jumbotron">
-				<label class="l1" id="updatelabel1" style="text-align:center;">ENTER THE PRODUCT NAME OF THE PRODUCT THAT MUST BE UPDATED<br></label>
+				<label class="l1" id="updatelabel1" style="text-align:center;">UPDATE PRODUCT<br></label>
 
                 <!-- Creating the form for the user to edit the item Details stored in the database-->
                 <!-- User must enter the item Name of the item that must be updated-->
@@ -119,7 +120,7 @@
 
 
 			<div class="jumbotron">
-				<label class="l1" id="deletelabel1" style="text-align:center;">ENTER THE PRODUCT NAME OF THE PRODUCT THAT MUST BE DELETED<br></label>
+				<label class="l1" id="deletelabel1" style="text-align:center;">DELETE PRODUCT<br></label>
 
                 <!-- Creating the form for the user to delete an item from the database-->
                 <!-- User must enter the item Name of the item that must be deleted-->
