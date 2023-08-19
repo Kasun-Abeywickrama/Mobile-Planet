@@ -8,7 +8,7 @@
 		padding-top: 170px;
 	}
 }
-
+/* 
 .cart-item {
     display: flex;
     align-items: center;
@@ -57,4 +57,35 @@
     text-align: center;
     padding: 50px;
     color: #888;
-  }
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,400&family=Manrope&display=swap');
+    body{
+        font-family: 'Bricolage Grotesque', sans-serif;
+font-family: 'Manrope', sans-serif;
+background-color: red;
+    }
+.carttable table{
+     
+    width: 100%;  
+    height: 50vh;
+    text-align: center;
+}
+table tr th{
+    border: 1px solid grey;
+}
+table tr td{
+    border: 1px solid grey;
+}
+
+button{
+    border: none;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: blue;
+    color: white;
+    width: 20%;
+    height: 60px;
+    margin-left: 20%;
+}

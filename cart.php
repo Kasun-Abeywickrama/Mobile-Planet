@@ -7,9 +7,9 @@
     <title>Cart</title>
 
     
-    <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link href="../css/headerAndFooter.css" rel="stylesheet" type="text/css">
-    <link href="../css/cart.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
+    <link href="css/cart.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -23,7 +23,8 @@
             <div class="container">
                 <div class="cart">
                 <!-- Cart items will be dynamically added here using JavaScript -->
-                <div class="empty-cart">
+                <form action="purchase.php" method="post">
+                <div class="carttable">
                     
                     <table>
                         <thead>
@@ -33,6 +34,7 @@
                             <th>Total</th>
                         </thead>
                         <tbody>
+                        
                             <?php
                                 include_once 'includes/dbConn.inc.php';
                                 $cwIdSql = "select cwId from cartwishlist where userId =".$_SESSION['log_id'];
@@ -57,6 +59,8 @@
                                     }
                                 }
                                 echo '
+                                    <input type="hidden" name="total-amount" value="'.$totalAmount.'">
+                                    <input type="hidden" name="discount" value="0">
                                     <tfoot>
                                         <tr>
                                             <td></td>
@@ -73,14 +77,13 @@
 
 
                 </div>
+                <button type="submit" name="cont-Shopping">Continue Shopping</button>
+                <button type="submit" name="update" formaction="#">Update</button>
+                            </form>
                 </div>
 
-                <div class="cart-total">Total: Rs.0.00</div>
 
-                <div class="cart-buttons">
-                <button>Continue Shopping</button>
-                <button>Checkout</button>
-                </div>
+             
             </div>
         </div>
     <?php include_once 'footer.php';?>

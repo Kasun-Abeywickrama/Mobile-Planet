@@ -44,7 +44,7 @@
 	      <div class="col-lg-6">
 	        <div class="jumbotron">
                 <?php
-                    echo '<img src="assets/ProductImages//'.$_POST['item-id'].'.png" class="img-fluid rounded" alt="Placeholder image" style="width:100%;">';
+                    echo '<img src="assets/ProductImages//'.$_POST['item-id'].'.png" class="img-fluid rounded" alt="'.$_POST['item-id'].'" style="width:100%;">';
                 ?>
             </div>
           </div>
