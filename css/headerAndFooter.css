@@ -12,14 +12,16 @@ header {
 
 
 footer {
-	background-color: #1E2A7D;
+	background: rgb(2,10,53);
+    background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgba(18,180,214,1) 80%);
 	color: white;
 }
 
 /* ---------------- top bar css  -------------------*/
 
 .top-bar {
-	background-color: #1E2A7D;
+	background: rgb(2,10,53);
+    background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgba(18,180,214,1) 80%);
 	display: flex;
 	border-bottom: 0.5px solid #7E7E7E;
 }
@@ -96,13 +98,15 @@ footer {
 }
 
 
+
 /* ---------------- search bar css -------------------*/
 
 .search-bar {
 	border-bottom: 1px solid #C5C5C5;
 	display: flex;
 	align-items: center;
-	background-color: #1E2A7D;
+	background: rgb(2,10,53);
+    background: linear-gradient(90deg, rgba(2,10,53,1) 0%, rgba(22,50,208,1) 7%, rgba(18,180,214,1) 80%);
 }
 .container-fluid .container-fluid.nav-bar-wrapper {
     border-color: #000000;
@@ -232,4 +236,9 @@ footer {
 	top: 30px;
 	background-color: red;
 	width: 100%;
+}
+
+
+div a{
+    color: white;
 }

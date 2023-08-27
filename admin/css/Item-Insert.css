@@ -12,16 +12,6 @@
     border-color: #0A2556;
 }
 
-form .form-group #exampleInputEmail1 {
-    width: 500px;
-}
-form .form-group.form-control {
-    width: 500\px;
-}
-form .form-group #exampleInputPassword1 {
-    width: 500px;
-}
-
 .jumbotron form .form-group {
     width: 500px;
 }

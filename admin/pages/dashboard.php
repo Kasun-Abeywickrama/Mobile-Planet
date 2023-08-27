@@ -9,70 +9,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-    <title>Dashboard-Mobileplanet</title>
+    <title>Dashboard-MobilePlanet</title>
+    <link rel="icon" href="../../assets/favicon-32x32.png" type="image/png">
 </head>
 <body>
     <?php include_once 'header.php'; ?>
     <div class="page-content">
-    <div class="container-fluid tile-wrapper">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="tile">
-                    <div class="amount">1585</div>
-                    <div class="title">Total Order</div>
-                    <div class="presentage-bar">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="presentage-number">60%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="tile">
-                    <div class="amount">$4855</div>
-                    <div class="title">Total Sales</div>
-                    <div class="presentage-bar">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="presentage-number">90%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="tile">
-                    <div class="amount">$5488</div>
-                    <div class="title">Total Profit</div>
-                    <div class="presentage-bar">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="presentage-number">25%</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="tile">
-                    <div class="amount">258</div>
-                    <div class="title">Total Return</div>
-                    <div class="presentage-bar">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="presentage-number">80%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="container-fluid">
+    <div class="container-fluid tab-wrapper">
         <div class="row">
             <div class="col-md">
                     <div class="recent-sales-wrapper">
@@ -80,54 +23,38 @@
                         <div class="body">
                             <table>
                                 <thead>
-                                    <th>Date</th>
-                                    <th>Customer</th>
-                                    <th>Sales</th>
-                                    <th>Total</th>
+                                    <th>Tran Id</th>
+                                    <th>Date and Time</th>
+                                    <th>Status</th>
+                                    <th>More</th>
                                 </thead>
                                <tbody>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Delivered</td>
-                                    <td>$245.85</td>
-                                </tr>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Pending</td>
-                                    <td>$245.85</td>
-                                </tr>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Delivered</td>
-                                    <td>$245.85</td>
-                                </tr>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Delivered</td>
-                                    <td>$245.85</td>
-                                </tr>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Delivered</td>
-                                    <td>$245.85</td>
-                                </tr>
-                                <tr>
-                                    <td>02 Jan 2023</td>
-                                    <td>Kasun Thiwanka</td>
-                                    <td>Delivered</td>
-                                    <td>$245.85</td>
-                                </tr>
+
+                                <?php
+                                    include_once '../../includes/dbConn.inc.php';
+                                    $sql = "select * from transaction order by dateTime asc limit 10";
+                                    $result = $conn->query($sql);
+                                    if($result->num_rows >0){
+                                        while($row = $result->fetch_assoc()){
+                                            $str="";
+                                            if($row["status"]==0){
+                                                $str='<td class="btn-danger">Pending</td>';
+                                            }else{
+                                                 $str='<td class="btn-success">Dispatched</td>';
+                                            }
+                                            echo '
+                                                     <tr>
+                                                        <td>'.$row["tranId"].'</td>
+                                                        <td>'.$row["dateTime"].'</td>'.$str.'
+                                                        <td><a href="order-details.php?tran-id='.$row['tranId'].'">more</a></td>
+                                                    </tr>
+                                                ';
+                                        }
+                                    }
+                                ?>
                             </tbody>
-                            <tfoot>
-                                
-                            </tfoot>
                             </table>
-                            <button type="button" class="btn btn-primary recent-sales-btn">See All</button>
+                            <a href="orders.php"><button type="button" class="btn btn-primary recent-sales-btn">See All</button></a>
                         </div> 
                     </div> 
             </div>
@@ -136,26 +63,26 @@
                         <div class="title">Stock</div> 
                         <div class="body">
                             <table>
-                                <tr>
-                                    <td>iphone 14 pro max</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>iphone 14 pro max</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>iphone 14 pro max</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>iphone 14 pro max</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>iphone 14 pro max</td>
-                                    <td>5</td>
-                                </tr>
+                            <?php
+                                $sql1="select itemId,itemName,stock from item where stock <5 order by itemName asc";
+                                $result1 = $conn->query($sql1);
+                                if($result1->num_rows >0){
+                                    while($row1 = $result1->fetch_assoc()){
+                                        $str1 = '';
+                                        if($row1['stock']<=0){
+                                            $str1 = '<td class="btn-danger">'.$row1["stock"].'</td>';
+                                        }else{
+                                            $str1 = '<td class="btn-warning">'.$row1["stock"].'</td>';
+                                        }
+                                        echo '
+                                            <tr>
+                                                <td>'.$row1["itemName"].'</td>
+                                                '.$str1.'
+                                            </tr>
+                                            ';
+                                    }
+                                }
+                            ?>
                             </table>
                         </div>
                     </div> 

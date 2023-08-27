@@ -1,0 +1,35 @@
+.page-content h5, p
+{
+    text-align: center;
+}
+
+.page-content table
+{
+    border: 2px solid;
+    width: 50%;
+    background: rgb(207, 224, 224);
+    border-color: #0A2556;
+}
+
+.page-content th, td
+{
+    border: 2px solid;
+    padding: 10px;
+}
+
+.page-content th
+{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border-color: #0A2556;
+    background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
+}
+
+.page-content .alignPrices
+{
+    text-align: right;
+}

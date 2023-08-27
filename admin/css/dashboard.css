@@ -120,3 +120,18 @@
   .top-seling-wrapper .body table{
     width: calc(100% - 20px)
   }
+
+  tr:hover{
+      background-color: rgb(201, 201, 201);
+  }
+
+  .tab-wrapper{
+      padding-top: 50px;
+  }
+
+  .page-content{
+      height: fit-content;
+  }
+  body{
+    background-color: #F0F0F2;
+  }

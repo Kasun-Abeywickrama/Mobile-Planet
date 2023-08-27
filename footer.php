@@ -5,35 +5,31 @@
           <div class="col-lg-3">
             <h4>About MobilePlanet</h4>
             <div>
-              Company info<br>
-              News<br>
-              Investors<br>
-              Careers<br>
-              Government relations<br>
-              Advertise with us<br>
-              Policies<br>
-              Verified Rights Owner (VeRO) Program
+              <a href="https://www.nsbm.ac.lk/">Company info</a><br>
+              <a href="https://www.nsbm.ac.lk/">News</a><br>
+              <a href="https://www.nsbm.ac.lk/">Investors</a><br>
+              <a href="https://www.nsbm.ac.lk/">Careers</a><br>
             </div>
           </div>
           <div class="col-lg-3">
             <h4>Branches</h4>
             <div>
-                Pitipana - Thalagala Rd, Homagama          
+                 <a href="https://www.nsbm.ac.lk/">Pitipana - Thalagala Rd, Homagama</a>          
             </div>
           </div>
           <div class="col-lg-3">
             <h4>Help Contact</h4>
             <div>
-              Seller Information Center<br>
-              Contact us
+               <a href="https://www.nsbm.ac.lk/">Seller Information Center</a><br>
+              <a href="contact-us.php">Contact us</a>
             </div>
           </div>
           <div class="col-lg-3">
             <h4>Follow us</h4>
-            Facebook<br>
-            Twitter<br>
-            Google<br>
-            Linkedin
+            <a href="https://www.facebook.com/">Facebook</a><br>
+            <a href="https://www.twitter.com/">Twitter</a><br>
+            <a href="https://www.google.com/">Google</a><br>
+            <a href="https://www.linkedin.com/">Linkedin</a>
           </div>
         </div>
       </div>

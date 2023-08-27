@@ -6,10 +6,10 @@
         <title>Document</title>
 
         <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-	<link href="css/item-page.css" rel="stylesheet" type="text/css">
 	<link href="css/purchase.css" rel="stylesheet" type="text/css">
     <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="js/purchase.js"></script>
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     </head>
     <body>
     <?php 
@@ -19,7 +19,7 @@
     ?>
     <?php include_once 'header.php'; ?>
         <div class="payment-wrapper">
-            <form class="pdetails" action="includes/purchase.inc.php" method="post">
+            <form class="pdetails" name="pdetails" action="includes/purchase.inc.php" method="post" onsubmit="return validatePurchase()">
                 <table>
                     <tr>
                         <td>Total Amount</td>
@@ -34,7 +34,7 @@
                     </tr>
                     <tr>
                         <td>Card Number</td>
-                        <td><input type="text" name="c-number"></td>
+                        <td><input type="text" name="c-number" id="cNumber"></td>
 
                     </tr>
                     <tr>
@@ -50,5 +50,10 @@
             </form>
         </div>
     <?php include_once 'footer.php'; ?>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
     </body>
     </html>

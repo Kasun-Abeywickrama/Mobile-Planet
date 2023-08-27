@@ -24,6 +24,7 @@
 	
 }
 
+
 .side-bar.active ~ .top-bar {
 	width: calc(100% - 60px);
 	left: 60px;

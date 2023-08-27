@@ -4,7 +4,8 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
+    <title>Product Insert-MobilePlanet</title>
+    <link rel="icon" href="../../assets/favicon-32x32.png" type="image/png">
     <!-- Bootstrap -->
 	<link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="../css/Item-Insert.css" rel="stylesheet" type="text/css">

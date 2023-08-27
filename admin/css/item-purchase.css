@@ -1,0 +1,21 @@
+.input-wrapper{
+	position: relative;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar-body{
+	position: absolute;
+	top: 30px;
+	width: 100%;
+}
+#search-val{
+    width: 100%;
+}
+
+tr input{
+    width: 280px;
+}
+

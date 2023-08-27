@@ -1,0 +1,41 @@
+
+
+.container-fluid {
+     background-color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-left:80px ;
+    
+
+  }
+
+  .container {
+    background-color: white;
+    width:700px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  td {
+    background-color: white;
+   padding: 10px 10px 10px 10px;
+   
+   border: solid rgb(205, 202, 202) 5px;
+    width:650px;
+    
+  }
+
+  .page-content {
+    width:fit-content;
+    background-color: white;
+  }

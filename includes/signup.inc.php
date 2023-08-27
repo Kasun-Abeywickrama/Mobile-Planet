@@ -5,6 +5,8 @@
 
         // Validate and sanitize user input
         $un = mysqli_real_escape_string($conn,$_POST['un']);
+        $fn = mysqli_real_escape_string($conn,$_POST['fn']);
+        $ln = mysqli_real_escape_string($conn,$_POST['ln']);
         $pwd = mysqli_real_escape_string($conn,$_POST['pwd']);
         $rpwd = mysqli_real_escape_string($conn,$_POST['rpwd']);
         $hpwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -14,6 +16,10 @@
 
         if(empty($un)){
             $errors[] = "Username is required !";
+        }
+
+        if(empty($fn)){
+            $errors[] = "First name is required !";
         }
 
         if(empty($pwd)){
@@ -38,16 +44,19 @@
         // If there are validation errors, display them to the user
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo "<p>Error : $error</p>";
+                echo '<script>alert("'.$error.'");</script>';
             }
-            
-        } else {
+            echo "<script>window.location.replace('../signin.php')</script>";
+        }else{
             // If there are no errors, proceed with the signup process
-            $sql = "insert into user(userName,Password,adminOrCustomer) values('$un','$hpwd','0')";
+            $sql = "insert into user(userName,Password,adminOrCustomer,firstName,lastName) values('$un','$hpwd','0','".$fn."','".$ln."')";
             if($conn->query($sql) == TRUE){
-                echo "Recode Updated Successfully";
+                echo '<script>alert("User has registerd Successfully");</script>';
+                echo "<script>window.location.replace('../signin.php')</script>";
+
             }else{
-                echo "error Updating Record".$conn->error;
+                echo '<script>alert("error Updating Record '.$conn->error.'");</script>';
+                echo "<script>window.location.replace('../signin.php')</script>";
             }
             
             $sql1 = "select userId from user order by userId desc limit 1";
@@ -56,6 +65,8 @@
             $sql2 = "insert into cartwishlist(userId)  values(".$record1['userId'].")";
             mysqli_query($conn,$sql2);
         }
+        echo '<script>alert("Sign up Successful!\nPlease Sign in");</script>';
+        echo "<script>window.location.replace('../signin.php')</script>";
     }else{
         header('Location:../signin.php');
     }

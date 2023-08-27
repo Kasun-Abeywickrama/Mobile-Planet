@@ -1,0 +1,23 @@
+table {
+  border-collapse: collapse;
+  width: 80%;
+  border: 1px solid;
+  justify-self: center;
+}
+
+th,td {
+    border-collapse: collapse;
+    width: 20%;
+    border: 1px solid;
+    text-align: center;
+  }
+
+  .page-content {
+    /* background-color: red; */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+

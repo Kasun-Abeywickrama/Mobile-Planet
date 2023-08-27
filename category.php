@@ -9,15 +9,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat</title>
+    <title>Category-MobilePlanet</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
+    
 
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link href="css/headerAndFooter.css" rel="stylesheet" type="text/css">
     <link href="css/category.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
 </head>
 <body>
-    <?php include_once 'header.php'; ?>
+    <?php include_once 'header.php';?>
+
+    <?php
+        echo '<a id="bId" href="#'.$_POST['brand-name'].'"></a>';
+    ?>
 
     <div class="content-wrapper">
     <div class="container-fluid cat-wrapper">
@@ -32,14 +39,14 @@
               while($record = mysqli_fetch_assoc($result)){
             echo '
             <div class="container title">
-               <h3>'.$record["brandName"].'</h3>
+               <h3 id="'.$record["brandName"].'">'.$record["brandName"].'</h3>
             </div>
             ';
             echo '
               <div class="container cat-card-wrapper">
               <div class="row">
             ';
-            $query = "select * from item where categoryId = ".$_POST['cat-id']."";
+            $query = "select * from item where categoryId = ".$_POST['cat-id']." and brandId = ".$record["brandId"];
             $result1 = mysqli_query($conn,$query);
             // while($record1 = mysqli_fetch_assoc($result)){
             //   echo $record1['sellingPrice'];
@@ -76,7 +83,13 @@
     </div>
     <?php include_once 'footer.php'; ?>
 
+  <script>
+        document.getElementById("bId").click();
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
 
-
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
 </body>
 </html>

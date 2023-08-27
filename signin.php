@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login-MobilePlanet</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -26,20 +27,16 @@
             <div class="container signin-form">
                 <h4 class="text-center"><span class="signin-btn" onClick="openSignIn();">Sign in</span><span> /
                     </span><span class="register-btn" onClick="openRegister();">Register</span></h4>
-                <form method="post" action="includes/signin.inc.php">
+                <form method="post" action="includes/signin.inc.php" onSubmit="return valSignin();">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name = "signin_un">
+                        <input type="email" class="form-control" id="em" placeholder="Enter email" name = "signin_un">
                         <small id="emailHelp1" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name = "signin_pwd">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="password" class="form-control" id="ps" placeholder="Password" name = "signin_pwd">
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
                 </form>
@@ -47,24 +44,29 @@
             <div class="container register-form">
                 <h4 class="text-center"><span class="signin-btn" onClick="openSignIn();">Sign in</span><span> /
                     </span><span class="register-btn" onClick="openRegister();">Register</span></h4>
-                <form name="register-Form" method="post" action="includes/signup.inc.php">
+                <form name="register-Form" method="post" action="includes/signup.inc.php" onSubmit="return valSignup();">
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email" name = 'un'>
+                        <label for="sem">Email address</label>
+                        <input type="email" class="form-control" id="sem" placeholder="Enter email" name = 'un'>
                         <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword2">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name = "pwd">
+                        <label for="sfn">Fitst Name</label>
+                        <input type="text" class="form-control" id="sfn" placeholder="First name" name = 'fn'>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sln">Last Name</label>
+                        <input type="text" class="form-control" id="sln" placeholder="Last name" name = 'ln'>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword3">Re-Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" name="rpwd">
+                        <label for="sps">Password</label>
+                        <input type="password" class="form-control" id="sps" placeholder="Password" name = "pwd">
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                        <label class="form-check-label" for="exampleCheck2">Check me out</label>
+                    <div class="form-group">
+                        <label for="srps">Re-Password</label>
+                        <input type="password" class="form-control" id="srps" placeholder="Password" name="rpwd">
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Register</button>
                 </form>
@@ -74,6 +76,32 @@
 </div>
 
 <?php include_once 'footer.php'; ?>
+
+<script>
+    function valSignin(){
+        if(document.getElementById("em").value=="" || document.getElementById("ps").value==""){
+            alert("Username and Password fileds are required!");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function valSignup(){
+        if(document.getElementById("sem").value=="" || document.getElementById("sfn").value=="" || document.getElementById("sln").value=="" || document.getElementById("sps").value=="" || document.getElementById("srps").value==""){
+            alert("All fileds are required!");
+            return false;
+        }else if(document.getElementById("sps").value.length < 8){
+            alert("Password should contain 8 characters!");
+            return false;
+        }else if(document.getElementById("sps").value != document.getElementById("srps").value){
+            alert("Passowrd does not match");
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
 
 <script>
 	  	function openSignIn(){

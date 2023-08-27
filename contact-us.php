@@ -1,35 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script>
-    function x()
-    {
-        if(document.log.yn.value=="")
-        {
-            alert("Name is missing");
-        }
-        if(document.log.yn.value.length>70)
-        {
-            alert("Name should be less than 70 characters")
-        }
-        if(document.log.em.value=="")
-        {
-            alert("Email is missing");
-        }
-        if(document.log.in.value=="")
-        {
-            alert("Inquiry is empty");
-        }
 
-
-    }
-    </script>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact us</title>
+    <title>Contact us-MobilePanet</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -43,16 +22,32 @@
 
 <body>
 <?php include_once 'header.php';?>
+
+<?php 
+    /*Connecting the database*/
+    include_once 'includes/dbConn.inc.php';
+
+    /*Getting the company details from the database*/
+    $getdet = "SELECT companyAddress, companyTelephone, companyOpeningTimes FROM company WHERE companyId='1'";
+    $exedet = $conn->query($getdet);
+    $row = mysqli_fetch_array($exedet);
+?>
+
     <div class="container-fluid contactus-wrapper">
         <div class="container contact-details-wrapper">
             <div class="row">
-                <div class="col-md-4"><b>Mobile Planet Maharagama</b><br>5/A, Stanley Thilakarathne
-                    Mawatha,<br>Nugegoda.</div>
-                <div class="col-md-4"><b>Telephone</b><br>
-                    0777788899</div>
-                <div class="col-md-4"><b>Opening Times</b><br>Moday-Friday 8.30 a.m to 8.00 p.m<br>
-                    and <br>
-                    Saturday-Sunday 8.30&nbsp; a.m to 5.00 p.m</div>
+                <div class="col-md-4">
+                    <b>Mobile Planet</b><br>
+                        <?php echo "$row[0]"; ?>
+                </div>
+                <div class="col-md-4">
+                    <b>Telephone</b><br>
+                        <?php echo "$row[1]"; ?>
+                </div>
+                <div class="col-md-4">
+                    <b>Opening Times</b><br>
+                        <?php echo "$row[2]"; ?>
+                </div>
             </div>
         </div>
 
@@ -68,8 +63,8 @@
 
         <div class="container-fluid contact-form-wrapper">
             <div class="container contact-form">
-                <h2 class="text-center">Contact Form</h2>
-                <form name="log">
+                <h2 class="text-center">Inquiry</h2>
+                <form name="log" method="post" action="includes/contactus-form.inc.php" onSubmit="return x();">
                     <div class="form-group">
                         <label for="exampleInputName">Your Name&nbsp;</label>
                         <input type="text" class="form-control" id="exampleInputName" name="yn">
@@ -82,13 +77,33 @@
                         <label for="exampleInputInquiry">Inquiry&nbsp;</label>
                         <input type="text" class="form-control" id="exampleInputInquiry" name="in">
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="x();">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
             </div>
         </div>
     </div>
     <?php include_once 'footer.php';?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script>
+        function x()
+        {
+            if(document.log.yn.value=="" || document.log.em.value=="" || document.log.in.value=="")
+            {
+                alert("All fields are required.");
+                return false;
+            }
+            else if(document.log.yn.value.length>70)
+            {
+                alert("Name should be less than 70 characters");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        </script>
+
     <script src="js/jquery-3.4.1.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -4,7 +4,8 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
+    <title>Product-MobilePlanet</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
     <!-- Bootstrap -->
 	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
 	<link href="css/item-page.css" rel="stylesheet" type="text/css">
@@ -59,7 +60,7 @@
               <div id="accordion1" role="tablist">
                 <div class="card">
                   <div class="card-header" role="tab" id="headingOne1">
-                    <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1"> Description</a> </h5>
+                    <h5 class="mb-0"> <a data-toggle="collapse" href="#collapseOne1" role="button" aria-expanded="true" aria-controls="collapseOne1"><font color="black"> Description</font></a> </h5>
                   </div>
                   <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordion1">
                     <div class="card-body">

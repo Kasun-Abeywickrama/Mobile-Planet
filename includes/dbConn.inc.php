@@ -1,14 +1,9 @@
 <?php 
     // Database credentials
-    /*$host = "sql309.infinityfree.com";
+    $host = "sql309.infinityfree.com";
     $username = "if0_34731176";
     $password = "KVrWl3mXlEV";
-    $database = "if0_34731176_e_commerce_db";*/
-
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "e_commerce_db1";
+    $database = "if0_34731176_e_commerce_db";
 
     //Connection String to Connect to the database
     $conn = new mysqli($host, $username, $password, $database);

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>My Cart-MobilePanet</title>
+    <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
 
     
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
@@ -32,6 +33,7 @@
                             <th>Unit Price</th>
                             <th>Qty</th>
                             <th>Total</th>
+                            <th>Edit</th>
                         </thead>
                         <tbody>
                         
@@ -48,12 +50,16 @@
                                     $itemDetSqlResult = mysqli_query($conn,$itemDetSql);
                                     if($itemDet = mysqli_fetch_assoc($itemDetSqlResult)){
                                         echo '
+                                        <input type="hidden" name="item-id" value="'.$record['itemId'].'">
+                                        <input type="hidden" name="cw-id" value="'.$cwId['cwId'].'">
                                             <tr>
                                                 <td>'.$itemDet["itemName"].'</td>
                                                 <td>'.$itemDet["sellingPrice"].'</td>
-                                                <td>'.$record["cartQuantity"].'</td>
+                                                <td><input type="text" name="qty" value="'.$record["cartQuantity"].'"></td>
                                                 <td>'.$itemDet["sellingPrice"]*$record["cartQuantity"].'</td>
+                                                <td><input  type="submit" value="Update" formaction="cart-update.php"></td>
                                             </tr>
+                                        
                                         ';
                                        $totalAmount += $itemDet["sellingPrice"]*$record["cartQuantity"];
                                     }
@@ -77,8 +83,8 @@
 
 
                 </div>
-                <button type="submit" name="cont-Shopping">Continue Shopping</button>
-                <button type="submit" name="update" formaction="#">Update</button>
+                <button type="submit" name="cont-Shopping" class="buttons">Check Out</button>
+                <button type="submit" name="update" formaction="index.php" class="buttons">Continue Shopping</button>
                             </form>
                 </div>
 
@@ -87,5 +93,10 @@
             </div>
         </div>
     <?php include_once 'footer.php';?>
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
 </body>
 </html>

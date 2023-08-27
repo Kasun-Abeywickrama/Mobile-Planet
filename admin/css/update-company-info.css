@@ -1,0 +1,38 @@
+.container .jumbotron .l1 {
+    font-weight: bold;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: x-large;
+    text-align: left;
+}
+
+.container .jumbotron{
+    border-style: solid;
+    border-color: #0A2556;
+}
+
+.jumbotron form .form-group {
+    width: 500px;
+}
+.jumbotron center .l1 {
+    width: 500px;
+}
+.container-fluid .container .jumbotron {
+    width: 560px;
+}
+
+form .form-group #submit123 {
+    background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
+    font-weight: bolder;
+    color: white;
+}
+form .form-group #reset123 {
+    background-image: -webkit-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(21,198,215,1.00) 0%,rgba(8,132,118,1.00) 100.00%);
+    font-weight: bolder;
+    color: white;
+}
